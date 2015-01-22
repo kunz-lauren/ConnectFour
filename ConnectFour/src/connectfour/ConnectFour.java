@@ -20,7 +20,7 @@ public class ConnectFour {
             + "in a row, either hortizonaly, vertically, or diagionally. \n"
             + "Player take turns placing their pieces on a six by six board. \n"
             + "The first person to connect four of their pieces in a row wins! \n"
-            + "Good Luck!";
+            + "Good Luck!\n";
     /**
      * @param args the command line arguments
      */
@@ -28,7 +28,11 @@ public class ConnectFour {
         ConnectFour myGame = new ConnectFour();
         myGame.getName();
         myGame.displayHelp();
-                
+           
+        Player player1=new Player();
+        
+        System.out.println(player1.getName());
+        System.out.println(player1.getColor());
     }
     //Functions
     public void getName() {
