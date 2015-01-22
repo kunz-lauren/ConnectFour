@@ -33,6 +33,14 @@ public class ConnectFour {
         
         System.out.println(player1.getName());
         System.out.println(player1.getColor());
+        
+        //@author Tenille Diel
+        GamePieces redPiece = new GamePieces();
+        GamePieces blackPiece = new GamePieces();
+        
+        System.out.println("\nPlayer 1 has " + redPiece.getPiecesPerPlayer() + " red " + redPiece.getShape() + " shaped pieces.");
+        System.out.println("\nPlayer 2 has " + blackPiece.getPiecesPerPlayer() + " black " + blackPiece.getShape() + " shaped pieces.");
+        
     }
     //Functions
     public void getName() {
