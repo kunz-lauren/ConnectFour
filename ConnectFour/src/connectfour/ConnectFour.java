@@ -41,6 +41,9 @@ public class ConnectFour {
         System.out.println("\nPlayer 1 has " + redPiece.getPiecesPerPlayer() + " red " + redPiece.getShape() + " shaped pieces.");
         System.out.println("\nPlayer 2 has " + blackPiece.getPiecesPerPlayer() + " black " + blackPiece.getShape() + " shaped pieces.");
         
+        Location location1 = new Location();
+        System.out.println("\nThe location is: Column " + location1.getColumnNumber() + ",and Row " + location1.getRowNumber() + ".");                
+        
     }
     //Functions
     public void getName() {
