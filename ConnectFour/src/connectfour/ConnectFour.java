@@ -22,7 +22,6 @@ public class ConnectFour {
             + "Player take turns placing their pieces on a six by six board. \n"
             + "The first person to connect four of their pieces in a row wins! \n"
             + "Good Luck!\n";    
-    
     /**
      * @param args the command line arguments
      */
