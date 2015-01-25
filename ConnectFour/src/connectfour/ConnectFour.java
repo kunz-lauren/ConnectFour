@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author Keith
  */
 public class ConnectFour {
+    Scanner input = new Scanner (System.in);
     //Instance Variables
     String name;
     String instructions = "This is the game of Connect Four \n\n"
@@ -42,12 +43,15 @@ public class ConnectFour {
         System.out.println("\nPlayer 2 has " + blackPiece.getPiecesPerPlayer() + " black " + blackPiece.getShape() + " shaped pieces.");
         
         Location location1 = new Location();
-        System.out.println("\nThe location is: Column " + location1.getColumnNumber() + ",and Row " + location1.getRowNumber() + ".");                
+        System.out.println("\nThe location is: Column " + location1.getColumnNumber() + ",and Row " + location1.getRowNumber() + ".");        
+        
+        //Added by Daniel
+        myGame.play();
         
     }
     //Functions
     public void getName() {
-        Scanner input = new Scanner (System.in);
+        
         System.out.println("Enter your name: ");
         this.name = input.next();
 }
@@ -55,5 +59,28 @@ public class ConnectFour {
         System.out.println("\nWelcome " + this.name + "\n");
         System.out.println(this.instructions);
         
+    }
+    
+    //Added by Daniel
+    public void play(){
+        Board board = new Board();
+        board.displayBoard();
+        boolean turn = true;
+        int col = 0;
+        String piece;
+        while(col != -1){
+            System.out.println("Enter a column to insert into. Enter -1 to exit.");
+            col = input.nextInt();
+            if(col != -1){
+                if(turn){
+                    piece = "r";
+                }else{
+                    piece = "b";
+                }
+                board.setBoardPiece(col, piece);
+                board.displayBoard();
+                turn = !turn;
+            }
+        }
     }
 }
