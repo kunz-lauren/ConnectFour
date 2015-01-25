@@ -21,7 +21,8 @@ public class ConnectFour {
             + "in a row, either hortizonaly, vertically, or diagionally. \n"
             + "Player take turns placing their pieces on a six by six board. \n"
             + "The first person to connect four of their pieces in a row wins! \n"
-            + "Good Luck!\n";
+            + "Good Luck!\n";    
+    
     /**
      * @param args the command line arguments
      */
