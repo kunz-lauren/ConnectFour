@@ -106,7 +106,7 @@ public class ConnectFour {
             phrase = "The board is too full.";
         }
         else if(percentage < 0){
-            phrase = percentage + "%. Invalid number of pieces. Please put the board back together.";
+            phrase = percentage + "%. Invalid number of pieces. \n\tPlease put the board back together.";
         }
         else{
             phrase = percentage + "%";
