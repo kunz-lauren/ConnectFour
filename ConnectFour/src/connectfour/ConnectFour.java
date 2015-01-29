@@ -27,7 +27,7 @@ public class ConnectFour {
      */
     public static void main(String[] args) {
         ConnectFour myGame = new ConnectFour();
-        myGame.getName();
+        /*myGame.getName();
         myGame.displayHelp();
            
         Player player1=new Player();
@@ -43,10 +43,17 @@ public class ConnectFour {
         System.out.println("\nPlayer 2 has " + blackPiece.getPiecesPerPlayer() + " black " + blackPiece.getShape() + " shaped pieces.");
         
         Location location1 = new Location();
-        System.out.println("\nThe location is: Column " + location1.getColumnNumber() + ",and Row " + location1.getRowNumber() + ".");        
+        System.out.println("\nThe location is: Column " + location1.getColumnNumber() + ",and Row " + location1.getRowNumber() + ".");     */   
         
         //Added by Daniel
-        myGame.play();
+        //myGame.play();
+        
+        System.out.println(myGame.gameStatus(0,0));
+        System.out.println(myGame.gameStatus(15,14));
+        System.out.println(myGame.gameStatus(19,18));
+        System.out.println(myGame.gameStatus(7,8));
+        System.out.println(myGame.gameStatus(0,-1));
+        System.out.println(myGame.gameStatus(15,13));
         
     }
     //Functions
@@ -82,5 +89,35 @@ public class ConnectFour {
                 turn = !turn;
             }
         }
+    }
+    
+    public String gameStatus(int redPieces, int blackPieces){
+        String phrase;
+        
+        int red;
+        int black;
+        red = redPieces;
+        black = blackPieces;
+        
+        double percentage;
+        percentage = (((double)red+(double)black)/36)*100;
+        
+        if(percentage > 100){
+            phrase = "The board is too full.";
+        }
+        else if(percentage < 0){
+            phrase = percentage + "%. Invalid number of pieces. Please put the board back together.";
+        }
+        else{
+            phrase = percentage + "%";
+        }
+        
+        if(black > red){
+            phrase = "Black has too many pieces.";
+        }
+        else if(red - black > 1){
+            phrase = "Red has too many pieces.";
+        }
+        return phrase;
     }
 }
