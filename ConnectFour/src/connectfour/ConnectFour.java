@@ -54,8 +54,11 @@ public class ConnectFour {
         System.out.println(myGame.gameStatus(7,8));
         System.out.println(myGame.gameStatus(0,-1));
         System.out.println(myGame.gameStatus(15,13));
-        
-    }
+        System.out.println(myGame.percentRed(15,14));
+        System.out.println(myGame.percentRed(36,0));
+        System.out.println(myGame.percentRed(0,36));
+        System.out.println(myGame.percentRed(15,13));
+    }   
     //Functions
     public void getName() {
         
@@ -120,4 +123,36 @@ public class ConnectFour {
         }
         return phrase;
     }
+    
+   public String percentRed (int redPieces, int blackPieces){
+
+//instance variables
+String phrase;
+int red;
+int black;
+
+red=redPieces;
+black=blackPieces;
+
+//equation
+double percentage;
+percentage=((double)red/((double)red+(double)black))*100;
+
+
+if(percentage > 60){
+    phrase="Red is lonely";}
+
+else if (percentage<40){
+    phrase= "\n Black is lonely";}
+
+else{
+    phrase= "\n"+ percentage+"%";
+
+
+
+
+
 }
+return phrase;
+
+   }}
