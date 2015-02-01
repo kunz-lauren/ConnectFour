@@ -65,6 +65,22 @@ public class ConnectFour {
         System.out.println(myGame.totalPiecesLeft(2,1));
         System.out.println(myGame.totalPiecesLeft(6,5));
         System.out.println(myGame.totalPiecesLeft(17,16));
+        
+        /*
+        * Added by Davy Garaix
+        * The following tests are for the checkBoardSize function
+        * from the Board class
+        */
+        
+        Board board = new Board();
+        System.out.print("\n*****************Start*of*Davy's*checkBoardSize*function*****************");
+        System.out.print(board.checkBoardSize(7, 5));
+        System.out.print(board.checkBoardSize(3, 6));
+        System.out.print(board.checkBoardSize(8, 2));
+        System.out.print(board.checkBoardSize(12, 9));
+        System.out.print(board.checkBoardSize(7, 13));
+        System.out.print(board.checkBoardSize(10, 10));
+        System.out.println("\n******************End*of*Davy's*checkBoardSize*function******************\n");
     }   
     //Functions
     public void getName() {

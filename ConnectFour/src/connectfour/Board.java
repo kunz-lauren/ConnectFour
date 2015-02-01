@@ -55,5 +55,44 @@ public class Board {
         }
     }
     
-    
+    /*
+    * @author Davy Garaix
+    * This function checks to see if a custom sized board
+    *   has enough rows and columns. It also checks if it has too many.
+    * Additionally, it calculates how much bigger or smaller it is compared to
+    *   the 6 x 6 default board size.
+    */
+    public String checkBoardSize (int columns, int rows) {
+        String message;
+        double percent;
+        
+        if (columns < 4) {
+            percent = -1;
+            message = "\nNot enough columns";
+            return message;
+        }
+        
+        if (columns > 10) {
+            percent = -1;
+            message = "\nToo many columns";
+            return message;
+        }
+        
+        if (rows < 4) {
+            percent = -1;
+            message = "\nNot enough rows";
+            return message;
+        }
+        
+        if (rows > 10) {
+            percent = -1;
+            message = "\nToo many rows";
+            return message;
+        }
+        
+        percent = (double)(columns * rows) / 36 * 100;
+        message = "\nThe board is valid, and is "
+                + percent + "% of the default 6 x 6 board.";
+        return message;
+    }
 }
