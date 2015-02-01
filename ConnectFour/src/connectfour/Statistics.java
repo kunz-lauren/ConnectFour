@@ -19,7 +19,10 @@ public class Statistics {
         wins++;
         loss += number;
         adjustFastestAndPercent(number);
+              
     }
+
+    
 
     private void adjustFastestAndPercent(int number) {
         if (containsSingleNumber()) {
@@ -54,5 +57,26 @@ public class Statistics {
 
     public double getAverage() {
         return (double) loss / wins;
+    }
+}
+
+class Minimum {
+    public static void main(String[] args) {
+	int number1 = 8025;
+        int number2 = 73;
+
+        System.out.println("The minimum of " + number1 + " and " +
+			   number2 + " is " + Math.min(number1, number2));
+    }
+}
+
+
+class Maximum {
+    public static void main(String[] args) {
+	int number1 = 8025;
+        int number2 = 73;
+
+        System.out.println("The minimum of " + number1 + " and " +
+			   number2 + " is " + Math.max(number1, number2));
     }
 }
