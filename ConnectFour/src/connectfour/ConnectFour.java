@@ -58,6 +58,13 @@ public class ConnectFour {
         System.out.println(myGame.percentRed(36,0));
         System.out.println(myGame.percentRed(0,36));
         System.out.println(myGame.percentRed(15,13));
+        System.out.println(myGame.totalPiecesLeft(0,0));
+        System.out.println(myGame.totalPiecesLeft(70,6));
+        System.out.println(myGame.totalPiecesLeft(-1,0));
+        System.out.println(myGame.totalPiecesLeft(15,14));
+        System.out.println(myGame.totalPiecesLeft(2,1));
+        System.out.println(myGame.totalPiecesLeft(6,5));
+        System.out.println(myGame.totalPiecesLeft(17,16));
     }   
     //Functions
     public void getName() {
@@ -123,6 +130,53 @@ public class ConnectFour {
         }
         return phrase;
     }
+    
+    //Added by Tenille
+    public String totalPiecesLeft (int redPieces, int blackPieces) {
+    //variables
+        String userDisplay;
+        int redLeft;
+        int blackLeft;
+        int piecesUsed;
+        int piecesLeft;
+        double percentLeft;
+            
+    //calculations
+    redLeft = 18 - redPieces;
+    blackLeft = 18 - blackPieces;
+    piecesUsed = redPieces + blackPieces;
+    piecesLeft = 36 - piecesUsed;
+    percentLeft = ((double)piecesLeft / 36) * 100;
+    
+    //valid input test
+    if (piecesUsed > 36 || piecesUsed < 0) {
+        userDisplay = "Invalid number of pieces.";
+        return userDisplay;
+    }
+    /* if (piecesUsed < 0) {
+        userDisplay = "Invalid number of pieces.";
+    }*/
+    
+    //logic
+    if (percentLeft <= 30){
+        userDisplay = "\nYou are almost out of pieces!\n"
+                + "Hurry! Connect 4 pieces!\n" 
+                + "Red has " + redLeft + " pieces left.\t"
+                + "Black has " + blackLeft + " pieces left.\n"
+                + "There is " + percentLeft + "%" + " of the pieces "
+                + "left in this game.";
+           }
+    else {
+        userDisplay = "\nYou have plenty of pieces left!\n"
+                + "Try to connect 4 pieces!\n" 
+                + "Red has " + redLeft + " pieces left.\t"
+                + "Black has " + blackLeft + " pieces left.\n"
+                + "There is " + percentLeft + "%" + " of the pieces "
+                + "left in this game.";
+           }
+     return userDisplay;
+            }
+    //end of Tenille's function
     
    public String percentRed (int redPieces, int blackPieces){
 
