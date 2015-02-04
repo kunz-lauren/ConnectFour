@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 public class ConnectFour {
     public static Scanner input = new Scanner (System.in);
     Board board = new Board();
+    Rules rule = new Rules();
     HelpMenuView helpView = new HelpMenuView();
     //Instance Variables
     String name;
@@ -105,15 +106,15 @@ public class ConnectFour {
         while(!menuOption.equals("10")){
             System.out.println("Select an option:");
             System.out.println("1) Single player game"
-                              +"2) 2 player game"
-                              +"3) Rules"
-                              +"4) Help"
-                              +"5) Help-French"
-                              +"6) Help-Pigeon"
-                              +"7) Quote of the Day"
-                              +"8) Credit"
-                              +"9) Disclamer"
-                              +"10) Exit");
+                              +"\n2) 2 player game"
+                              +"\n3) Rules"
+                              +"\n4) Help"
+                              +"\n5) Help-French"
+                              +"\n6) Help-Pigeon"
+                              +"\n7) Quote of the Day"
+                              +"\n8) Credit"
+                              +"\n9) Disclamer"
+                              +"\n10) Exit");
             menuOption = input.nextLine();
             switch (menuOption){
                 case "1":
@@ -123,7 +124,7 @@ public class ConnectFour {
                     computerPlay();
                     break;
                 case "3":
-                    System.out.println("There is nothing here right now.");
+                    rule.output();
                     break;
                 case "4":
                     helpView.getInput();
