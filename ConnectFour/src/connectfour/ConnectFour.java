@@ -102,15 +102,18 @@ public class ConnectFour {
     
     public void mainMenu(){               
         String menuOption = "";
-        while(!menuOption.equals("7")){
+        while(!menuOption.equals("10")){
             System.out.println("Select an option:");
-            System.out.println("1) Single player game");
-            System.out.println("2) 2 player game");
-            System.out.println("3) Rules");
-            System.out.println("4) Help");
-            System.out.println("5) Bonus");
-            System.out.println("6) Credits");
-            System.out.println("7) Exit");
+            System.out.println("1) Single player game"
+                              +"2) 2 player game"
+                              +"3) Rules"
+                              +"4) Help"
+                              +"5) Help-French"
+                              +"6) Help-Pigeon"
+                              +"7) Quote of the Day"
+                              +"8) Credit"
+                              +"9) Disclamer"
+                              +"10) Exit");
             menuOption = input.nextLine();
             switch (menuOption){
                 case "1":
@@ -129,6 +132,15 @@ public class ConnectFour {
                     System.out.println("There is nothing here right now.");
                     break;
                 case "6":
+                    System.out.println("There is nothing here right now.");
+                    break;
+                case "7":
+                    System.out.println("There is nothing here right now.");
+                    break;
+                case "8":
+                    System.out.println("There is nothing here right now.");
+                    break;
+                case "9":
                     System.out.println("There is nothing here right now.");
                     break;
             }
