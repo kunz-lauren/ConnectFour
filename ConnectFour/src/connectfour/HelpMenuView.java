@@ -38,14 +38,13 @@ public class HelpMenuView {
         String command;
         
         // if the program doesn run, this is what we should fix
-        Scanner input = new Scanner(System.in);
         
         do {
             
             this.display(); // display the menu
             
             // get commaned entered
-            command = input.nextLine();
+            command = ConnectFour.input.nextLine();
             command = command.trim().toUpperCase();
             
             switch (command) {

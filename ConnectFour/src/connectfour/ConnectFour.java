@@ -6,13 +6,17 @@
 package connectfour;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Keith
  */
 public class ConnectFour {
-    Scanner input = new Scanner (System.in);
+    public static Scanner input = new Scanner (System.in);
+    Board board = new Board();
+    HelpMenuView helpView = new HelpMenuView();
     //Instance Variables
     String name;
     String instructions = "This is the game of Connect Four \n\n"
@@ -27,6 +31,7 @@ public class ConnectFour {
      */
     public static void main(String[] args) {
         ConnectFour myGame = new ConnectFour();
+        myGame.mainMenu();
         /*myGame.getName();
         myGame.displayHelp();
            
@@ -48,6 +53,7 @@ public class ConnectFour {
         //Added by Daniel
         //myGame.play();
         
+        /*
         System.out.println(myGame.gameStatus(0,0));
         System.out.println(myGame.gameStatus(15,14));
         System.out.println(myGame.gameStatus(19,18));
@@ -64,7 +70,7 @@ public class ConnectFour {
         System.out.println(myGame.totalPiecesLeft(15,14));
         System.out.println(myGame.totalPiecesLeft(2,1));
         System.out.println(myGame.totalPiecesLeft(6,5));
-        System.out.println(myGame.totalPiecesLeft(17,16));
+        System.out.println(myGame.totalPiecesLeft(17,16));*/
         
         /*
         * Added by Davy Garaix
@@ -72,7 +78,7 @@ public class ConnectFour {
         * from the Board class
         */
         
-        Board board = new Board();
+        /*
         System.out.print("\n*****************Start*of*Davy's*checkBoardSize*function*****************");
         System.out.print(board.checkBoardSize(7, 5));
         System.out.print(board.checkBoardSize(3, 6));
@@ -80,7 +86,7 @@ public class ConnectFour {
         System.out.print(board.checkBoardSize(12, 9));
         System.out.print(board.checkBoardSize(7, 13));
         System.out.print(board.checkBoardSize(10, 10));
-        System.out.println("\n******************End*of*Davy's*checkBoardSize*function******************\n");
+        System.out.println("\n******************End*of*Davy's*checkBoardSize*function******************\n");*/
     }   
     //Functions
     public void getName() {
@@ -94,9 +100,75 @@ public class ConnectFour {
         
     }
     
+    public void mainMenu(){               
+        String menuOption = "";
+        while(!menuOption.equals("7")){
+            System.out.println("Select an option:");
+            System.out.println("1) Single player game");
+            System.out.println("2) 2 player game");
+            System.out.println("3) Rules");
+            System.out.println("4) Help");
+            System.out.println("5) Bonus");
+            System.out.println("6) Credits");
+            System.out.println("7) Exit");
+            menuOption = input.nextLine();
+            switch (menuOption){
+                case "1":
+                    play();
+                    break;
+                case "2":
+                    computerPlay();
+                    break;
+                case "3":
+                    System.out.println("There is nothing here right now.");
+                    break;
+                case "4":
+                    helpView.getInput();
+                    break;
+                case "5":
+                    System.out.println("There is nothing here right now.");
+                    break;
+                case "6":
+                    System.out.println("There is nothing here right now.");
+                    break;
+            }
+        }
+    }
+    
     //Added by Daniel
+    public void computerPlay(){
+        Board board = new Board();
+        Computer comp = new Computer();
+        board.displayBoard();
+        boolean turn = true;
+        int col = 0;
+        String piece;
+        while(col != -1){
+            if(turn){
+                System.out.println("Enter a column to insert into. Enter -1 to exit.");
+                col = input.nextInt();
+                piece = "r";
+            }else{
+                System.out.println("It is the computers turn. It is thinking.");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(ConnectFour.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                piece = "b";
+                col = comp.easyMode();
+            }
+            if(col != -1){
+                board.setBoardPiece(col, piece);
+                board.displayBoard();
+                turn = !turn;
+            }
+        }
+    }
+    
     public void play(){
         Board board = new Board();
+        Computer comp = new Computer();
         board.displayBoard();
         boolean turn = true;
         int col = 0;
@@ -104,12 +176,12 @@ public class ConnectFour {
         while(col != -1){
             System.out.println("Enter a column to insert into. Enter -1 to exit.");
             col = input.nextInt();
+            if(turn){
+                piece = "r";
+            }else{
+                piece = "b";
+            }
             if(col != -1){
-                if(turn){
-                    piece = "r";
-                }else{
-                    piece = "b";
-                }
                 board.setBoardPiece(col, piece);
                 board.displayBoard();
                 turn = !turn;
