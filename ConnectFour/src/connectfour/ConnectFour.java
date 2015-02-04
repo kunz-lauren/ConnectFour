@@ -18,6 +18,7 @@ public class ConnectFour {
     Board board = new Board();
     Rules rule = new Rules();
     HelpMenuView helpView = new HelpMenuView();
+    CreditsMenuView creditsView = new CreditsMenuView();
     //Instance Variables
     String name;
     String instructions = "This is the game of Connect Four \n\n"
@@ -139,7 +140,7 @@ public class ConnectFour {
                     System.out.println("There is nothing here right now.");
                     break;
                 case "8":
-                    System.out.println("There is nothing here right now.");
+                    creditsView.getInput();
                     break;
                 case "9":
                     System.out.println("There is nothing here right now.");
