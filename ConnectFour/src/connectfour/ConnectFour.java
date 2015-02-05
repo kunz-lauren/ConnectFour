@@ -18,6 +18,7 @@ public class ConnectFour {
     Board board = new Board();
     Rules rule = new Rules();
     HelpMenuView helpView = new HelpMenuView();
+    FrenchHelpMenuView frenchHelpView = new FrenchHelpMenuView();
     CreditsMenuView creditsView = new CreditsMenuView();
     //Instance Variables
     String name;
@@ -131,7 +132,7 @@ public class ConnectFour {
                     helpView.getInput();
                     break;
                 case "5":
-                    System.out.println("There is nothing here right now.");
+                    frenchHelpView.getInput();
                     break;
                 case "6":
                     System.out.println("There is nothing here right now.");
