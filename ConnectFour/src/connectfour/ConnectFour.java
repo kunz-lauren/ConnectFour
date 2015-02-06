@@ -105,15 +105,16 @@ public class ConnectFour {
         while(!menuOption.equals("10")){
             System.out.println("Select an option:");
             System.out.println("1) Single player game"
-                              +"2) 2 player game"
-                              +"3) Rules"
-                              +"4) Help"
-                              +"5) Help-French"
-                              +"6) Help-Pigeon"
-                              +"7) Quote of the Day"
-                              +"8) Credit"
-                              +"9) Disclamer"
-                              +"10) Exit");
+                              +"\n2) 2 player game"
+                              +"\n3) Rules"
+                              +"\n4) Help"
+                              +"\n5) Help-French"
+                              +"\n6) Game-Mode"
+                              +"\n7) Quote of the Day"
+                              +"\n8) Credit"
+                              +"\n9) Disclamer"
+                              +"\n10) Exit");
+            System.out.print(">");
             menuOption = input.nextLine();
             switch (menuOption){
                 case "1":
@@ -123,7 +124,10 @@ public class ConnectFour {
                     computerPlay();
                     break;
                 case "3":
-                    System.out.println("There is nothing here right now.");
+                    System.out.println();
+                    Rules display = new Rules();
+                    display.output();
+                    System.out.println();
                     break;
                 case "4":
                     helpView.getInput();
