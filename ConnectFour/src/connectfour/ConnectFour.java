@@ -20,6 +20,7 @@ public class ConnectFour {
     HelpMenuView helpView = new HelpMenuView();
     FrenchHelpMenuView frenchHelpView = new FrenchHelpMenuView();
     CreditsMenuView creditsView = new CreditsMenuView();
+    QuoteMenuView quoteView = new QuoteMenuView();
     //Instance Variables
     String name;
     String instructions = "This is the game of Connect Four \n\n"
@@ -138,7 +139,7 @@ public class ConnectFour {
                     System.out.println("There is nothing here right now.");
                     break;
                 case "7":
-                    System.out.println("There is nothing here right now.");
+                    quoteView.getInput();
                     break;
                 case "8":
                     creditsView.getInput();
