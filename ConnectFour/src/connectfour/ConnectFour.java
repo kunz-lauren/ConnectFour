@@ -194,19 +194,39 @@ public class ConnectFour {
         int col = 0;
         String piece;
         while(col != -1){
-            System.out.println("Enter a column to insert into. Enter -1 to exit.");
-            col = input.nextInt();
-            if(turn){
-                piece = "r";
-            }else{
-                piece = "b";
-            }
-            if(col != -1){
-                board.setBoardPiece(col, piece);
-                board.displayBoard();
-                turn = !turn;
-            }
-        }
+           System.out.println("Enter a column to insert into or check a column using (example) check3 (Checks column 3). Enter -1 to exit.");
+           String column = input.nextLine().toLowerCase();
+           if(column.length() == 6){
+               if (column.startsWith("check") && (column.endsWith("1") || column.endsWith("2") || column.endsWith("3") || column.endsWith("4") || column.endsWith("5") || column.endsWith("6"))){
+                   checkBoard (column);
+               } else {
+                   System.out.println("Invalid input.");
+                   continue;
+               }
+                   
+           } else if(column.length() == 1 || column.length() == 2){
+               try{
+               col = Integer.getInteger(column);
+               } catch(Exception e){
+                   System.out.println("Invalid input.");
+                   continue;
+               }
+               if(turn){
+                   piece = "r";
+               }else{
+                   piece = "b";
+               }
+               if(col != -1){
+                   board.setBoardPiece(col, piece);
+                   board.displayBoard();
+                   turn = !turn;
+               }
+           } else{
+               System.out.println("Invalid input.");
+               continue;
+           }
+       }
+
     }
     
     public String gameStatus(int redPieces, int blackPieces){
