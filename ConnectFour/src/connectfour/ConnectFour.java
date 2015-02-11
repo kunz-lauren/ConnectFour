@@ -16,7 +16,11 @@ import java.util.logging.Logger;
 public class ConnectFour {
     public static Scanner input = new Scanner (System.in);
     Board board = new Board();
+    Rules rule = new Rules();
     HelpMenuView helpView = new HelpMenuView();
+    FrenchHelpMenuView frenchHelpView = new FrenchHelpMenuView();
+    CreditsMenuView creditsView = new CreditsMenuView();
+    QuoteMenuView quoteView = new QuoteMenuView();
     //Instance Variables
     String name;
     String instructions = "This is the game of Connect Four \n\n"
@@ -133,16 +137,16 @@ public class ConnectFour {
                     helpView.getInput();
                     break;
                 case "5":
-                    System.out.println("There is nothing here right now.");
+                    frenchHelpView.getInput();
                     break;
                 case "6":
                     new GameModeView().getInput();
                     break;
                 case "7":
-                    System.out.println("There is nothing here right now.");
+                    quoteView.getInput();
                     break;
                 case "8":
-                    System.out.println("There is nothing here right now.");
+                    creditsView.getInput();
                     break;
                 case "9":
                     System.out.println("There is nothing here right now.");
