@@ -83,7 +83,7 @@ public class GameModeControl {
             
     public void displayHelpBorder() {       
         System.out.println(
-        "\t********************************************************************");
+        "\t****************************************************************************************************");
     }
 
     public void displayError() {       

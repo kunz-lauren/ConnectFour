@@ -136,7 +136,7 @@ public class ConnectFour {
                     System.out.println("There is nothing here right now.");
                     break;
                 case "6":
-                    System.out.println("There is nothing here right now.");
+                    new GameModeView().getInput();
                     break;
                 case "7":
                     System.out.println("There is nothing here right now.");
