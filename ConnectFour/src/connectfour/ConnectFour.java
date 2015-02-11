@@ -99,11 +99,13 @@ public class ConnectFour {
         String[] fourInARowTestThree = {"b","b","b","b","",""};
         String[] fourInARowTestFour = {"r","r","r","r","",""};
         String[] fourInARowTestFive = {"","","","","",""};
-        System.out.println(myGame.fourInARow(fourInARowTestOne,"r"));
-        System.out.println(myGame.fourInARow(fourInARowTestTwo,"b"));
-        System.out.println(myGame.fourInARow(fourInARowTestThree,"c"));
-        System.out.println(myGame.fourInARow(fourInARowTestFour,"-1"));
-        System.out.println(myGame.fourInARow(fourInARowTestFive,"r"));
+        System.out.println("\n***fourInARow test***");
+        System.out.print(myGame.fourInARow(fourInARowTestOne,"r"));
+        System.out.print(myGame.fourInARow(fourInARowTestTwo,"b"));
+        System.out.print(myGame.fourInARow(fourInARowTestThree,"c"));
+        System.out.print(myGame.fourInARow(fourInARowTestFour,"-1"));
+        System.out.print(myGame.fourInARow(fourInARowTestFive,"r"));
+        System.out.println("\n***end of fourInARow test***\n");
     }   
     //Functions
     public void getName() {
