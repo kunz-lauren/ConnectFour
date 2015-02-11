@@ -91,6 +91,19 @@ public class ConnectFour {
         System.out.print(board.checkBoardSize(7, 13));
         System.out.print(board.checkBoardSize(10, 10));
         System.out.println("\n******************End*of*Davy's*checkBoardSize*function******************\n");*/
+        
+        // Test for Davy's fourInARow function
+        // These tests will execute when the main menu is exited (via option 10)
+        String[] fourInARowTestOne = {"r","r","b","b","r","r"};
+        String[] fourInARowTestTwo = {"","r","b","b","b","b"};
+        String[] fourInARowTestThree = {"b","b","b","b","",""};
+        String[] fourInARowTestFour = {"r","r","r","r","",""};
+        String[] fourInARowTestFive = {"","","","","",""};
+        System.out.println(myGame.fourInARow(fourInARowTestOne,"r"));
+        System.out.println(myGame.fourInARow(fourInARowTestTwo,"b"));
+        System.out.println(myGame.fourInARow(fourInARowTestThree,"c"));
+        System.out.println(myGame.fourInARow(fourInARowTestFour,"-1"));
+        System.out.println(myGame.fourInARow(fourInARowTestFive,"r"));
     }   
     //Functions
     public void getName() {
@@ -198,7 +211,7 @@ public class ConnectFour {
            String column = input.nextLine().toLowerCase();
            if(column.length() == 6){
                if (column.startsWith("check") && (column.endsWith("1") || column.endsWith("2") || column.endsWith("3") || column.endsWith("4") || column.endsWith("5") || column.endsWith("6"))){
-                   checkBoard (column);
+                   // checkBoard (column);
                } else {
                    System.out.println("Invalid input.");
                    continue;
@@ -337,4 +350,30 @@ else{
 }
 return phrase;
 
-   }}
+   }
+
+   // Lesson 05 individual function added by Davy Garaix
+   public boolean fourInARow(String[] gamePieces, String shape){
+       String[] arrayOfPieces = gamePieces;
+       String evaluatedPiece = shape;
+       int i;
+       int count = 0;
+       
+       for (i=0; i < arrayOfPieces.length; i++) {
+           if (arrayOfPieces[i] == null) {
+               count = 0;
+               continue;
+           }
+           if (arrayOfPieces[i] == evaluatedPiece){
+               count++;
+               if (count == 4) {
+                   return true;
+               }
+           } else {
+               count = 0;
+           }
+       }
+       return false;
+   }
+
+}
