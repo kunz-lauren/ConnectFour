@@ -10,6 +10,7 @@ package connectfour;
  * @author Daniel
  */
 public class Board {
+    CheckAvailibiltyView checkView = new CheckAvailibiltyView();
     private String board[][] = {{"┌-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┐"},
                                 {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
                                 {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
@@ -53,6 +54,10 @@ public class Board {
             }
             System.out.println();
         }
+    }
+    
+    public void checkBoard(int column){
+        checkView.findAvailable(board, column);
     }
     
     /*

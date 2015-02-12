@@ -137,10 +137,10 @@ public class ConnectFour {
             menuOption = input.nextLine();
             switch (menuOption){
                 case "1":
-                    play();
+                    computerPlay();
                     break;
                 case "2":
-                    computerPlay();
+                    play();
                     break;
                 case "3":
                     System.out.println();
@@ -172,7 +172,6 @@ public class ConnectFour {
     
     //Added by Daniel
     public void computerPlay(){
-        Board board = new Board();
         Computer comp = new Computer();
         board.displayBoard();
         boolean turn = true;
@@ -202,8 +201,6 @@ public class ConnectFour {
     }
     
     public void play(){
-        Board board = new Board();
-        Computer comp = new Computer();
         board.displayBoard();
         boolean turn = true;
         int col = 0;
@@ -213,7 +210,7 @@ public class ConnectFour {
            String column = input.nextLine().toLowerCase();
            if(column.length() == 6){
                if (column.startsWith("check") && (column.endsWith("1") || column.endsWith("2") || column.endsWith("3") || column.endsWith("4") || column.endsWith("5") || column.endsWith("6"))){
-                   // checkBoard (column);
+                   board.checkBoard(Integer.parseInt(column.substring(5)));
                } else {
                    System.out.println("Invalid input.");
                    continue;
@@ -221,7 +218,7 @@ public class ConnectFour {
                    
            } else if(column.length() == 1 || column.length() == 2){
                try{
-               col = Integer.getInteger(column);
+               col = Integer.parseInt(column);
                } catch(Exception e){
                    System.out.println("Invalid input.");
                    continue;

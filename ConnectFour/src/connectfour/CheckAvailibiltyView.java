@@ -12,5 +12,14 @@ package connectfour;
  */
 public class CheckAvailibiltyView {
     
+    public void findAvailable(String[][] board, int column){
+        int actualCol = column*2-1;
+        if(board[1][actualCol].equals(" ")){
+            System.out.println("You can put a piece in this column.");
+        } else{
+            System.out.println("This column is full. Pick a different one.");
+        }
+    }
+    
 }
 
