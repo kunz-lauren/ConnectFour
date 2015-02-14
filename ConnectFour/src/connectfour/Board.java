@@ -42,6 +42,9 @@ public class Board {
         }else{
             this.board[row][actualCol] = piece;
         }
+        if (isFull()) {
+            System.out.println("The board is full.");
+        }
     }
     
     public void displayBoard(){
@@ -100,4 +103,16 @@ public class Board {
                 + percent + "% of the default 6 x 6 board.";
         return message;
     }
+    
+    //@author Tenille Diel
+        private boolean isFull() {      
+
+            for (int cols = 1; cols < 12; cols+=2) {
+                 
+                if (board[1][cols] == " ");
+                return false;
+            }
+            return true;
+        }        
+
 }
