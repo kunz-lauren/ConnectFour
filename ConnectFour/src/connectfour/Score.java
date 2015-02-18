@@ -15,6 +15,27 @@ public class Score {
 
     ArrayList<Integer> redStats = new ArrayList<Integer>();
     ArrayList<Integer> blackStats = new ArrayList<Integer>();
+    
+    Score(){
+        redStats.add(1);
+        redStats.add(0);
+        redStats.add(1);
+        redStats.add(0);
+        redStats.add(1);
+        redStats.add(0);
+        redStats.add(1);
+        redStats.add(0);
+        
+        blackStats.add(0);
+        blackStats.add(1);
+        blackStats.add(0);
+        blackStats.add(1);
+        blackStats.add(0);
+        blackStats.add(1);
+        blackStats.add(0);
+        blackStats.add(1);
+        
+    }
 
     public void scoreStore(String winner) {
 
@@ -54,5 +75,9 @@ public class Score {
             list.set(first,list.get(i));
             list.set(i,temp);
         }
+        for(int k = 0; k < list.size(); k++){
+            System.out.print(list.get(k)+" ");
+        }
+        System.out.println();
     }
 }

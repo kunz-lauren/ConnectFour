@@ -23,7 +23,7 @@ public class GameMenuControl {
     
     private boolean isWinner() {
 
-        Player[][] locations = this.board.getBoardLocations();
+      /*  Player[][] locations = this.board.getBoardLocations();
 
         for (int row = 0; row < locations.length; row++) {
             Player[] rowLocations = locations[row];
@@ -34,7 +34,7 @@ public class GameMenuControl {
                     return true;
                 }
             }
-        }
+        }*/
 
         return false;
     }

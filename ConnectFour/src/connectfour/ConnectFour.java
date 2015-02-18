@@ -96,7 +96,7 @@ public class ConnectFour {
         
         // Test for Davy's fourInARow function
         // These tests will execute when the main menu is exited (via option 10)
-        String[] fourInARowTestOne = {"r","r","b","b","r","r"};
+        /*String[] fourInARowTestOne = {"r","r","b","b","r","r"};
         String[] fourInARowTestTwo = {"","r","b","b","b","b"};
         String[] fourInARowTestThree = {"b","b","b","b","",""};
         String[] fourInARowTestFour = {"r","r","r","r","",""};
@@ -107,7 +107,7 @@ public class ConnectFour {
         System.out.print(myGame.fourInARow(fourInARowTestThree,"c"));
         System.out.print(myGame.fourInARow(fourInARowTestFour,"-1"));
         System.out.print(myGame.fourInARow(fourInARowTestFive,"r"));
-        System.out.println("\n***end of fourInARow test***\n");
+        System.out.println("\n***end of fourInARow test***\n");*/
     }   
     //Functions
     public void getName() {
