@@ -195,6 +195,7 @@ public class ConnectFour {
             if(col != -1){
                 board.setBoardPiece(col, piece);
                 board.displayBoard();
+                board.boardFull();
                 turn = !turn;
             }
         }
@@ -231,6 +232,7 @@ public class ConnectFour {
                if(col != -1){
                    board.setBoardPiece(col, piece);
                    board.displayBoard();
+                   board.boardFull();
                    turn = !turn;
                }
            } else{

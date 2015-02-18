@@ -46,7 +46,18 @@ public class Board {
             System.out.println("The board is full.");
         }
     }
-    
+    public void boardFull(){
+       
+        // for top row in table
+        for (int i = 11; i > 0; i-=2) {
+            if(board[1][i].equals(" ")){
+                System.out.println("The board is not full.");
+                return;
+            }
+        }
+            System.out.println("The board is full.");
+            }
+
     public void displayBoard(){
         
         //System.out.println(board[0][13]);
