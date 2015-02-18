@@ -21,6 +21,7 @@ public class ConnectFour {
     FrenchHelpMenuView frenchHelpView = new FrenchHelpMenuView();
     CreditsMenuView creditsView = new CreditsMenuView();
     QuoteMenuView quoteView = new QuoteMenuView();
+    Score score = new Score();  
     //Instance Variables
     String name;
     String instructions = "This is the game of Connect Four \n\n"
@@ -35,7 +36,8 @@ public class ConnectFour {
      */
     public static void main(String[] args) {
         ConnectFour myGame = new ConnectFour();
-        myGame.mainMenu();
+        myGame.score.scoreStore("red");
+        //myGame.mainMenu();
         /*myGame.getName();
         myGame.displayHelp();
            

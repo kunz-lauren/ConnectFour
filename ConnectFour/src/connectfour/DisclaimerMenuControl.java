@@ -34,9 +34,5 @@ public void displayWelcomeBorder() {
         System.out.println("\tThat is an invalid selection. Please choose again.");
         displayWelcomeBorder();             
     }
-
-    void displayWelcomemessage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
