@@ -38,6 +38,7 @@ public class ConnectFour {
     public static void main(String[] args) {
         ConnectFour myGame = new ConnectFour();
         myGame.score.scoreStore("red");
+        myGame.score.whoWon();
         //myGame.mainMenu();
         /*myGame.getName();
         myGame.displayHelp();

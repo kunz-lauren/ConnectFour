@@ -80,4 +80,21 @@ public class Score {
         }
         System.out.println();
     }
+      public void whoWon(){
+        int redWins=0;
+        int blackWins=0;
+        
+        for(int i: redStats){
+            redWins = redWins+ i;
+        }
+        for(int x: blackStats){
+            blackWins = blackWins+ x;
+        }
+        if(redWins>blackWins)
+             System.out.println("Red is winning.");
+        else if(blackWins>redWins)
+            System.out.println("Black is winning.");
+        else
+            System.out.println("Black and Red are tied.");
+      }
 }
