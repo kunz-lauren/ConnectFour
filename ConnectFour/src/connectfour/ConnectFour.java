@@ -21,7 +21,8 @@ public class ConnectFour {
     FrenchHelpMenuView frenchHelpView = new FrenchHelpMenuView();
     CreditsMenuView creditsView = new CreditsMenuView();
     QuoteMenuView quoteView = new QuoteMenuView();
-    Score score = new Score();  
+    Score score = new Score();
+    ScoreCalc scoreCalc = new ScoreCalc();
     //Instance Variables
     String name;
     String instructions = "This is the game of Connect Four \n\n"
@@ -378,5 +379,5 @@ return phrase;
        }
        return false;
    }
-
+   
 }
