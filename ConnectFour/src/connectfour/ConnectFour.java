@@ -39,6 +39,8 @@ public class ConnectFour {
         ConnectFour myGame = new ConnectFour();
         myGame.score.scoreStore("red");
         myGame.score.whoWon();
+        //Tenille's code for StudentTestScores
+        System.out.println( "The average test score is: " + new StudentTestScores().testScores()); 
         //myGame.mainMenu();
         /*myGame.getName();
         myGame.displayHelp();
