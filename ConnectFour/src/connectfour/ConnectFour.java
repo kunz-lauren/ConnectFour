@@ -21,7 +21,8 @@ public class ConnectFour {
     FrenchHelpMenuView frenchHelpView = new FrenchHelpMenuView();
     CreditsMenuView creditsView = new CreditsMenuView();
     QuoteMenuView quoteView = new QuoteMenuView();
-    Score score = new Score();  
+    Score score = new Score();
+    ScoreCalc scoreCalc = new ScoreCalc();
     //Instance Variables
     String name;
     String instructions = "This is the game of Connect Four \n\n"
@@ -37,6 +38,7 @@ public class ConnectFour {
     public static void main(String[] args) {
         ConnectFour myGame = new ConnectFour();
         myGame.score.scoreStore("red");
+        myGame.score.whoWon();
         //myGame.mainMenu();
         /*myGame.getName();
         myGame.displayHelp();
@@ -96,7 +98,7 @@ public class ConnectFour {
         
         // Test for Davy's fourInARow function
         // These tests will execute when the main menu is exited (via option 10)
-        String[] fourInARowTestOne = {"r","r","b","b","r","r"};
+        /*String[] fourInARowTestOne = {"r","r","b","b","r","r"};
         String[] fourInARowTestTwo = {"","r","b","b","b","b"};
         String[] fourInARowTestThree = {"b","b","b","b","",""};
         String[] fourInARowTestFour = {"r","r","r","r","",""};
@@ -107,7 +109,7 @@ public class ConnectFour {
         System.out.print(myGame.fourInARow(fourInARowTestThree,"c"));
         System.out.print(myGame.fourInARow(fourInARowTestFour,"-1"));
         System.out.print(myGame.fourInARow(fourInARowTestFive,"r"));
-        System.out.println("\n***end of fourInARow test***\n");
+        System.out.println("\n***end of fourInARow test***\n");*/
     }   
     //Functions
     public void getName() {
@@ -378,5 +380,5 @@ return phrase;
        }
        return false;
    }
-
+   
 }

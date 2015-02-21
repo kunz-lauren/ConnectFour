@@ -37,7 +37,7 @@ public class DisclaimerMenuView {
         switch (command) {
             
             case "T":
-                    this.disclaimerMenuControl.displayWelcomemessage();
+                   // this.disclaimerMenuControl.displayWelcomemessage();
         case "Q": 
                     break;
                     
