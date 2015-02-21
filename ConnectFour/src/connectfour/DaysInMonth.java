@@ -10,7 +10,7 @@ package connectfour;
  * @author laurenkorpacz
  */
 // This program outputs a calender.
-// By www.neiljohan.com
+// For lauren's individual assignment week 6
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
