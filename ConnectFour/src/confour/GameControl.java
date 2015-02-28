@@ -7,6 +7,8 @@ package confour;
 
 // @author Daniel
 public class GameControl {
+    int row, col;
+    String piece;
     private String board[][] = {{"┌-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┐"},
                                 {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
                                 {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
@@ -37,6 +39,9 @@ public class GameControl {
             if(board[i][actualCol].equals(" ")){
                 row = i;
                 i = -1;
+                this.row = i*2-1;
+                this.col = actualCol;
+                this.piece = piece;
             }
         }
         if(row == 0){
@@ -75,12 +80,26 @@ public class GameControl {
     }
     
     public boolean checkSpace(int row, int col){
-        int row1, row2, row3, row4;
-        int col1, col2, col3, col4;
+        //int row1, row2, row3, row4;
+        //int col1, col2, col3, col4;
         
+        
+        int counter = 0;
+        for(int i = -6; i <= 6; i += 2){
+            if(row + i >= 1 && row + i <= 11 && col + i >= 1 && col + i <= 11){
+                if(board[row + i][col + i].equals(piece)){
+                    counter++;
+                }
+                else{
+                    counter = 0;
+                }
+            }
+            if(counter == 4){
+                return true;
+            }
+        }
+        counter = 0;
         /*
-        
-        */
         //check far top-left
         row1 = row-6;
         row2 = row-4;
@@ -151,8 +170,23 @@ public class GameControl {
             if(board[row1][col1].equals(board[row2][col2]) && board[row2][col2].equals(board[row3][col3]) && board[row3][col3].equals(board[row4][col4])){
                 return true;
             }
-        }
+        }*/
         
+        for(int i = -6; i <= 6; i += 2){
+            if(row + i >= 1 && row + i <= 11 && col - i >= 1 && col - i <= 11){
+                if(board[row + i][col - i].equals(piece)){
+                    counter++;
+                }
+                else{
+                    counter = 0;
+                }
+            }
+            if(counter == 4){
+                return true;
+            }
+        }
+        counter = 0;
+        /*
         //check far bot-left
         row1 = row-6;
         row2 = row-4;
@@ -223,8 +257,23 @@ public class GameControl {
             if(board[row1][col1].equals(board[row2][col2]) && board[row2][col2].equals(board[row3][col3]) && board[row3][col3].equals(board[row4][col4])){
                 return true;
             }
-        }
+        }*/
         
+        for(int i = -6; i <= 6; i += 2){
+            if(row + i >= 1 && row + i <= 11){
+                if(board[row + i][col].equals(piece)){
+                    counter++;
+                }
+                else{
+                    counter = 0;
+                }
+            }
+            if(counter == 4){
+                return true;
+            }
+        }
+        counter = 0;
+        /*
         //check far top mid
         row1 = row-6;
         row2 = row-4;
@@ -275,8 +324,23 @@ public class GameControl {
             if(board[row1][col].equals(board[row2][col]) && board[row2][col].equals(board[row3][col]) && board[row3][col].equals(board[row4][col])){
                 return true;
             }
-        }
+        }*/
         
+        for(int i = -6; i <= 6; i += 2){
+            if(col + i >= 1 && col + i <= 11){
+                if(board[row][col + i].equals(piece)){
+                    counter++;
+                }
+                else{
+                    counter = 0;
+                }
+            }
+            if(counter == 4){
+                return true;
+            }
+        }
+        return false;
+        /*
         //check far mid left
         col1 = col-6;
         col2 = col-4;
@@ -329,7 +393,7 @@ public class GameControl {
             }
         }
         
-        return false;
+        return false;*/
     }
     
     //@author Tenille Diel
