@@ -79,7 +79,7 @@ public class GameControl {
         return false;
     }
     
-    public boolean checkSpace(int row, int col){
+    private boolean checkSpace(int row, int col){
         //int row1, row2, row3, row4;
         //int col1, col2, col3, col4;
         

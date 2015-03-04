@@ -22,7 +22,7 @@ public class DisclaimerControl {
         displayWelcomeBorder();
     }
 
-public void displayWelcomeBorder() {       
+private void displayWelcomeBorder() {       
         System.out.println(
         "\t#####################################################################################");
     }

@@ -125,7 +125,7 @@ public class QuoteControl {
         displayQuoteBorder();
     }
     
-    public void displayQuoteBorder() {       
+    private void displayQuoteBorder() {       
         System.out.println(
         "\t#####################################################################################");
     }

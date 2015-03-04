@@ -62,7 +62,7 @@ public class FrenchHelpView {
         } while (!selection.equals("Q"));
     }
     
-    public final void affiche() {
+    private final void affiche() {
         this.frenchHelpControl.afficheAideBordureSupérieure();
         System.out.println(elementsAide);
         System.out.println("\tEntrez la lettre indiquant votre sélection");

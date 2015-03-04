@@ -43,7 +43,7 @@ public class DisclaimerView {
            
     }
 
-    public final void display() {
+    private final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 

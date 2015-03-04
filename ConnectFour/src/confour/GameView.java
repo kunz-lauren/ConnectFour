@@ -20,7 +20,7 @@ public class GameView {
     Player player1;
     Player player2;
     
-    void play(int players){
+    public void play(int players){
         game.clearBoard();
         gameWon = false;
         col = 0;

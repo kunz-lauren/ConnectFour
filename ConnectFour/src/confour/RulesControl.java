@@ -42,7 +42,7 @@ public class RulesControl {
         
     }
 
-    void display() {
+    public void display() {
         System.out.println(rule1 + "\n" +
                            rule2 + "\n" +
                            rule3 + "\n" + 
