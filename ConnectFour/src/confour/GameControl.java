@@ -7,9 +7,9 @@ package confour;
 
 // @author Daniel
 public class GameControl {
-    int row, col;
-    String piece;
-    private String board[][] = {{"┌-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┐"},
+    private static int row, col;
+    private static String piece;
+    private static String board[][] = {{"┌-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┐"},
                                 {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
                                 {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
                                 {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
@@ -157,5 +157,42 @@ public class GameControl {
             }
             return true;
         }        
+
+    // Default constructor
+    public GameControl() {
+    }
+
+    // Getters and Setters
+    public static int getRow() {
+        return row;
+    }
+
+    public static void setRow(int row) {
+        GameControl.row = row;
+    }
+
+    public static int getCol() {
+        return col;
+    }
+
+    public static void setCol(int col) {
+        GameControl.col = col;
+    }
+
+    public static String getPiece() {
+        return piece;
+    }
+
+    public static void setPiece(String piece) {
+        GameControl.piece = piece;
+    }
+
+    public static String[][] getBoard() {
+        return board;
+    }
+
+    public static void setBoard(String[][] board) {
+        GameControl.board = board;
+    }
 
 }
