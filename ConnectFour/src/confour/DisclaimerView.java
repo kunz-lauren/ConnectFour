@@ -36,12 +36,11 @@ public class DisclaimerView {
                     break;
                     
                 default: 
-                    this.disclaimerMenuControl.displayError();
-                    continue;
+                    this.disclaimerMenuControl.displayError();         
         
         }
         }while (!command.equals("Q"));
-           return;
+           
     }
 
     public final void display() {

@@ -78,11 +78,10 @@ public class CreditsMenuView {
                     
                 default: 
                     this.creditsMenuControl.displayError();
-                    continue;
+                    
             }
         } while (!command.equals("Q"));  
         
-         return;
     }
 
         // displays the help menu

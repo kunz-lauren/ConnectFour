@@ -41,11 +41,7 @@ public class GameModeControl {
                 + "\n\t must be placed back on the board through a slot at the top into any open space and the turn ends, switching"
                 + "\n\t to the other player. The first player to set aside ten discs of his or her color wins the game."
                 );
-        displayHelpBorder();
-                   
-
-     
-        
+        displayHelpBorder(); 
     }
     
     public void displayFiveInARow() {
