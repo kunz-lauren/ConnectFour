@@ -5,11 +5,14 @@
  */
 package confour;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  *
  * @author Davy
  */
-public class HelpView{
+public class HelpView implements Serializable{
     private final static String[][] helpItems = {
         {"G", "The game"},
         {"P", "A regular player"},   
@@ -74,4 +77,40 @@ public class HelpView{
         }
         System.out.println("\t===============================================================\n");
     }
+
+    public HelpControl getHelpControl() {
+        return helpControl;
+    }
+
+    public void setHelpControl(HelpControl helpControl) {
+        this.helpControl = helpControl;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.helpControl);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final HelpView other = (HelpView) obj;
+        if (!Objects.equals(this.helpControl, other.helpControl)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "HelpView{" + "helpControl=" + helpControl + '}';
+    }
+    
 }

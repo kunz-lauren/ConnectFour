@@ -5,11 +5,14 @@
  */
 package confour;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  *
  * @author Tenille Diel
  */
-public class QuoteView {
+public class QuoteView implements Serializable{
     private final static String[][] choices = {
         {"S", "See the Sunday quote"},
         {"M", "See the Monday quote"},   
@@ -80,6 +83,41 @@ public class QuoteView {
             System.out.println("\t   " + choices[i][0] + "\t" + choices[i][1]);
         }
         System.out.println("\t===============================================================\n");
+    }
+
+    public QuoteControl getQuoteMenuControl() {
+        return quoteMenuControl;
+    }
+
+    public void setQuoteMenuControl(QuoteControl quoteMenuControl) {
+        this.quoteMenuControl = quoteMenuControl;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.quoteMenuControl);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final QuoteView other = (QuoteView) obj;
+        if (!Objects.equals(this.quoteMenuControl, other.quoteMenuControl)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "QuoteView{" + "quoteMenuControl=" + quoteMenuControl + '}';
     }
    
 }
