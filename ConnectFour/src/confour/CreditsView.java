@@ -5,11 +5,13 @@
  */
 package confour;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 
  */
-public class CreditsView {
+public class CreditsView implements Serializable {
     
     
     private final static String[][] creditsItems = {
@@ -24,6 +26,8 @@ public class CreditsView {
     
     // Create instance of the HelpMenuControl (action) class
     private CreditsControl creditsMenuControl = new CreditsControl();
+    
+    public CreditsView(){}
     
     // display the help menu and get the end users input selection
     public void go() {       
@@ -86,7 +90,7 @@ public class CreditsView {
     }
   class CreditsControl {
     
-    public void displayLauren() {
+    private void displayLauren() {
         System.out.println();
         displayCreditsBorder();     
         System.out.println( 
@@ -98,7 +102,7 @@ public class CreditsView {
         displayCreditsBorder();
     }
 
-    public void displayTenille() {
+    private void displayTenille() {
         System.out.println();
         displayCreditsBorder();     
         System.out.println( 
@@ -109,7 +113,7 @@ public class CreditsView {
         displayCreditsBorder();
     }
     
-    public void displayDavy() {
+    private void displayDavy() {
         System.out.println();
         displayCreditsBorder();             
         System.out.println( 
@@ -123,7 +127,7 @@ public class CreditsView {
         displayCreditsBorder();
     }
     
-    public void displayRen() {
+    private void displayRen() {
         System.out.println();
         displayCreditsBorder();     
         System.out.println( 
@@ -134,7 +138,7 @@ public class CreditsView {
         displayCreditsBorder();
     }    
         
-    public void displayDaniel() {
+    private void displayDaniel() {
         System.out.println();
         displayCreditsBorder();     
         System.out.println( 
@@ -149,7 +153,7 @@ public class CreditsView {
         displayCreditsBorder();
     }
       
-    public void displayKeoni(){
+    private void displayKeoni(){
         System.out.println();
         displayCreditsBorder();
         System.out.println(
@@ -164,12 +168,24 @@ public class CreditsView {
         "\t********************************************************************");
     }
 
-    public void displayError() {       
+    private void displayError() {       
         System.out.println();
         displayCreditsBorder();                     
         System.out.println("\tThis is an invalid selection. Please choose again.");
         displayCreditsBorder();             
+   
     }
+
+        private CreditsControl() {
+        }
+
+        @Override
+        public String toString() {
+            return "CreditsControl{" + '}';
+        }
+        
+       
+        
     
 }
 }
