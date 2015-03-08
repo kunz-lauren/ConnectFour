@@ -5,11 +5,14 @@
  */
 package confour;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  *
  * @author Lauren Korpacz
  */
-public class DisclaimerView {
+public class DisclaimerView implements Serializable {
     private final static String[][] choices = {
           
         {"T", "See disclaimer message"}     
@@ -17,7 +20,7 @@ public class DisclaimerView {
     
     private DisclaimerControl disclaimerMenuControl = new DisclaimerControl();
 
-    public void go() {       
+    private void go() {       
               
         String command;
                 
@@ -43,6 +46,46 @@ public class DisclaimerView {
            
     }
 
+    public DisclaimerView() {
+    }
+
+    public DisclaimerControl getDisclaimerMenuControl() {
+        return disclaimerMenuControl;
+    }
+
+    public void setDisclaimerMenuControl(DisclaimerControl disclaimerMenuControl) {
+        this.disclaimerMenuControl = disclaimerMenuControl;
+    }
+
+    @Override
+    public String toString() {
+        return "DisclaimerView{" + "disclaimerMenuControl=" + disclaimerMenuControl + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.disclaimerMenuControl);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final DisclaimerView other = (DisclaimerView) obj;
+        if (!Objects.equals(this.disclaimerMenuControl, other.disclaimerMenuControl)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
     private final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -51,7 +94,12 @@ public class DisclaimerView {
             System.out.println("\t   " + choices[i][0] + "\t" + choices[i][1]);
         }
         System.out.println("\t===============================================================\n");
+    
+    
+    
     }
+
+    
    
 }
 
