@@ -9,11 +9,11 @@ package confour;
  *
  * @author Keoni
  */
-public class GameModeView {
+public class GameModeView extends Menu{
     
 
     
-    private final static String[][] helpItems = {
+    private final static String[][] choices = {
         {"1", "Pop Out"},
         {"2", "Pop 10"},   
         {"3", "5-in-a-Row"},
@@ -25,6 +25,7 @@ public class GameModeView {
     private GameModeControl GameModeControl = new GameModeControl();
     
     // display the help menu and get the end users input selection
+    @Override
     public void go() {       
               
         String command;
@@ -66,14 +67,8 @@ public class GameModeView {
     }
 
         // displays the help menu
-    private final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < GameModeView.helpItems.length; i++) {
-            System.out.println("\t   " + helpItems[i][0] + "\t" + helpItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
+    public GameModeView(){
+    super (GameModeView.choices);
     }
   
 }

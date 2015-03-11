@@ -11,10 +11,10 @@ import java.io.Serializable;
  *
  * @author 
  */
-public class CreditsView implements Serializable {
+public class CreditsView extends Menu implements Serializable {
     
     
-    private final static String[][] creditsItems = {
+    private final static String[][] choices = {
         {"L", "Lauren Kunz"},
         {"T", "Tenille Diel"},   
         {"D", "Davy Garaix"},
@@ -27,9 +27,12 @@ public class CreditsView implements Serializable {
     // Create instance of the HelpMenuControl (action) class
     private CreditsControl creditsMenuControl = new CreditsControl();
     
-    public CreditsView(){}
+    public CreditsView(){
+        super(CreditsView.choices);
+    }
     
     // display the help menu and get the end users input selection
+    @Override 
     public void go() {       
               
         String command;
@@ -79,15 +82,7 @@ public class CreditsView implements Serializable {
     }
 
         // displays the help menu
-    private final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < CreditsView.creditsItems.length; i++) {
-            System.out.println("\t   " + creditsItems[i][0] + "\t" + creditsItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
+   
   class CreditsControl {
     
     private void displayLauren() {

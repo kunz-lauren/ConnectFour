@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Tenille Diel
  */
-public class QuoteView implements Serializable{
+public class QuoteView extends Menu implements Serializable{
     private final static String[][] choices = {
         {"S", "See the Sunday quote"},
         {"M", "See the Monday quote"},   
@@ -25,7 +25,8 @@ public class QuoteView implements Serializable{
     };    
     
     private QuoteControl quoteMenuControl = new QuoteControl();
-
+    
+    @Override
     public void go() {       
               
         String command;
@@ -75,15 +76,9 @@ public class QuoteView implements Serializable{
         } while (!command.equals("Q"));  
     }
 
-    private final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < QuoteView.choices.length; i++) {
-            System.out.println("\t   " + choices[i][0] + "\t" + choices[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
+  public QuoteView(){
+  super(QuoteView.choices);
+  }
 
     public QuoteControl getQuoteMenuControl() {
         return quoteMenuControl;

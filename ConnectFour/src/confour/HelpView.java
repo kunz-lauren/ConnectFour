@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Davy
  */
-public class HelpView implements Serializable{
-    private final static String[][] helpItems = {
+public class HelpView extends Menu implements Serializable{
+    private final static String[][] choices = {
         {"G", "The game"},
         {"P", "A regular player"},   
         {"B", "The board"},
@@ -22,10 +22,15 @@ public class HelpView implements Serializable{
         {"Q", "Quit Help"}        
     };    
     
+    public HelpView(){
+    super(HelpView.choices);
+    }
     // Create instance of the HelpMenuControl (action) class
+   
     private HelpControl helpControl = new HelpControl();
         
     // display the help menu and get the end users input selection
+    @Override
     public void go(){       
               
         String command;
@@ -68,15 +73,7 @@ public class HelpView implements Serializable{
     }
 
         // displays the help menu
-    private final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for(int i = 0; i < HelpView.helpItems.length; i++) {
-            System.out.println("\t   " + helpItems[i][0] + "\t" + helpItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
+    
 
     public HelpControl getHelpControl() {
         return helpControl;
@@ -92,6 +89,7 @@ public class HelpView implements Serializable{
         hash = 97 * hash + Objects.hashCode(this.helpControl);
         return hash;
     }
+    
 
     @Override
     public boolean equals(Object obj) {

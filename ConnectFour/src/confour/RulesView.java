@@ -9,9 +9,10 @@ package confour;
  *
  * @author Daniel
  */
-public class RulesView {
+public class RulesView extends Menu {
     RulesControl control = new RulesControl();
     
+    @Override
     public void go(){
         control.display();
     }

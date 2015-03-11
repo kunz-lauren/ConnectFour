@@ -12,14 +12,14 @@ import java.util.Objects;
  *
  * @author Lauren Korpacz
  */
-public class DisclaimerView implements Serializable {
+public class DisclaimerView extends Menu implements Serializable {
     private final static String[][] choices = {
           
         {"T", "See disclaimer message"}     
     };    
     
     private DisclaimerControl disclaimerMenuControl = new DisclaimerControl();
-
+    @Override
     public void go() {       
               
         String command;
@@ -47,6 +47,7 @@ public class DisclaimerView implements Serializable {
     }
 
     public DisclaimerView() {
+        super(DisclaimerView.choices);
     }
 
     public DisclaimerControl getDisclaimerMenuControl() {
@@ -86,18 +87,7 @@ public class DisclaimerView implements Serializable {
     
     
 
-    private final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < DisclaimerView.choices.length; i++) {
-            System.out.println("\t   " + choices[i][0] + "\t" + choices[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    
-    
-    
-    }
+   
 
     
    
