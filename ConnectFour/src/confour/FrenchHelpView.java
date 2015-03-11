@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class FrenchHelpView extends Menu implements Serializable {
 
-    private static String[][] choices = {
+    private final static String[][] choices = {
         {"J: ", "Le Jeu"},  // Game
         {"R: ", "Joueur"},  // Player
         {"P: ", "Plateau"}, // Board
@@ -164,13 +164,15 @@ public class FrenchHelpView extends Menu implements Serializable {
     }
 
     // Getters and Setters
-    public String[][] getElementsAide() {
-        return choices;
+
+    public FrenchHelpControl getFrenchHelpControl() {
+        return frenchHelpControl;
     }
 
-    public void setElementsAide(String elementsAide) {
-        this.choices = choices;
+    public void setFrenchHelpControl(FrenchHelpControl frenchHelpControl) {
+        this.frenchHelpControl = frenchHelpControl;
     }
+
 
     // equals function
 
