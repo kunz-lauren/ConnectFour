@@ -12,28 +12,32 @@ import java.util.Objects;
  *
  * @author Davy
  */
-public class FrenchHelpView implements Serializable {
+public class FrenchHelpView extends Menu implements Serializable {
 
-    private static String elementsAide = "\tJ: Le Jeu" // Game
-            + "\tR: Joueur" // Player
-            + "\tP: Plateau" // Board
-            + "\n\tC: Colonne" // Column
-            + "\tT: Jeton" // Marker
-            + "\tQ: Quitter"; // Quit French Menu
-
-    public FrenchHelpView() {
-    }
+    private static String[][] choices = {
+        {"J: ", "Le Jeu"},  // Game
+        {"R: ", "Joueur"},  // Player
+        {"P: ", "Plateau"}, // Board
+        {"C: ", "Colonne"}, // Column
+        {"T: ", "Jeton"},   // Marker
+        {"Q: ", "Quitter"}  // Quit French Menu
+    };
 
     // Creates an instance of the frenchHelpMenuControl class
     FrenchHelpControl frenchHelpControl = new FrenchHelpControl();
 
+    public FrenchHelpView() {
+        super(FrenchHelpView.choices);
+    }
+
+    @Override
     public void go() {
 
         String selection;
 
         do {
 
-            this.affiche(); // display the french menu
+            this.display(); // display the french menu
 
             // get commaned entered
             selection = ConnectFour.input.nextLine();
@@ -69,15 +73,16 @@ public class FrenchHelpView implements Serializable {
         } while (!selection.equals("Q"));
     }
 
-    // Display menu function
-    private final void affiche() {
-        this.frenchHelpControl.afficheAideBordureSupérieure();
-        System.out.println(elementsAide);
-        System.out.println("\tEntrez la lettre indiquant votre sélection");
-        this.frenchHelpControl.afficheAideBordureInférieure();
-    }
+    /* Display menu function
+     private final void affiche() {
+     this.frenchHelpControl.afficheAideBordureSupérieure();
+     System.out.println(super.choices);
+     System.out.println("\tEntrez la lettre indiquant votre sélection");
+     this.frenchHelpControl.afficheAideBordureInférieure();
+     }
+    */
 
-    // Inner class
+     // Inner class
     class FrenchHelpControl {
 
         private void afficheAideJeu() { // display game help
@@ -157,17 +162,24 @@ public class FrenchHelpView implements Serializable {
             afficheAideBordureInférieure();
         }
     }
-    
+
     // Getters and Setters
-    public String getElementsAide() {
-        return elementsAide;
+    public String[][] getElementsAide() {
+        return choices;
     }
 
     public void setElementsAide(String elementsAide) {
-        this.elementsAide = elementsAide;
+        this.choices = choices;
     }
 
     // equals function
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -177,19 +189,17 @@ public class FrenchHelpView implements Serializable {
             return false;
         }
         final FrenchHelpView other = (FrenchHelpView) obj;
-        if (!Objects.equals(this.elementsAide, other.elementsAide)) {
-            return false;
-        }
         if (!Objects.equals(this.frenchHelpControl, other.frenchHelpControl)) {
             return false;
         }
         return true;
-    }   
-    
+    }
+
+
     // toString function
     @Override
     public String toString() {
-        return "FrenchHelpView{" + "elementsAide=" + elementsAide + ", frenchHelpControl=" + frenchHelpControl + '}';
+        return "FrenchHelpView{" + "choices=" + choices + ", frenchHelpControl=" + frenchHelpControl + '}';
     }
 
 }
