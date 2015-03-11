@@ -20,7 +20,7 @@ public class DisclaimerView implements Serializable {
     
     private DisclaimerControl disclaimerMenuControl = new DisclaimerControl();
 
-    private void go() {       
+    public void go() {       
               
         String command;
                 
