@@ -73,15 +73,6 @@ public class FrenchHelpView extends Menu implements Serializable {
         } while (!selection.equals("Q"));
     }
 
-    /* Display menu function
-     private final void affiche() {
-     this.frenchHelpControl.afficheAideBordureSupérieure();
-     System.out.println(super.choices);
-     System.out.println("\tEntrez la lettre indiquant votre sélection");
-     this.frenchHelpControl.afficheAideBordureInférieure();
-     }
-    */
-
      // Inner class
     class FrenchHelpControl {
 
