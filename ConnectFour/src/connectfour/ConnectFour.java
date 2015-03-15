@@ -40,8 +40,15 @@ public class ConnectFour {
         myGame.score.scoreStore("red");
         myGame.score.whoWon();
         //Tenille's code for StudentTestScores
-        System.out.println( "The average test score is: " + new StudentTestScores().testScores()); 
-        //myGame.mainMenu();
+        //System.out.println( "The average test score is: " + new StudentTestScores().testScores()); 
+        //Tenille's code to print the Food classes
+        Strawberries strawberries = new Strawberries();
+        strawberries.eat();
+        Chicken chicken = new Chicken();
+        chicken.eat();
+        Broccoli broccoli = new Broccoli();
+        broccoli.eat();
+//myGame.mainMenu();
         /*myGame.getName();
         myGame.displayHelp();
            
