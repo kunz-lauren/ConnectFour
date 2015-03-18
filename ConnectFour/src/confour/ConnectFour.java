@@ -5,6 +5,12 @@
  */
 package confour;
 
+import confour.menus.RulesView;
+import confour.menus.QuoteView;
+import confour.menus.HelpView;
+import confour.menus.FrenchHelpView;
+import confour.menus.DisclaimerView;
+import confour.menus.CreditsView;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.Serializable;

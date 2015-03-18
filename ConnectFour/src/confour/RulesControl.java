@@ -25,7 +25,7 @@ public class RulesControl {
     
     String rule7;
     
-    RulesControl(){
+    public RulesControl(){
      rule1 = "1. A player can only play one piece per turn.";
      
      rule2 = "2. Players must alternate turns.";

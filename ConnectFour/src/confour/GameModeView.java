@@ -5,6 +5,10 @@
  */
 package confour;
 
+import confour.ConnectFour;
+import confour.GameModeControl;
+import confour.Menu;
+
 /**
  *
  * @author Keoni

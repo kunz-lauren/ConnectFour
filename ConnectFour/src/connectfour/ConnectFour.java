@@ -5,6 +5,10 @@
  */
 package connectfour;
 
+import connectfour.menus.QuoteMenuView;
+import connectfour.menus.HelpMenuView;
+import connectfour.menus.FrenchHelpMenuView;
+import connectfour.menus.CreditsMenuView;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
