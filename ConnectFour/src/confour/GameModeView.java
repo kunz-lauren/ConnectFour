@@ -29,7 +29,7 @@ public class GameModeView extends Menu{
     private GameModeControl GameModeControl = new GameModeControl();
     
     // display the help menu and get the end users input selection
-    @Override
+
     public void go() {       
               
         String command;

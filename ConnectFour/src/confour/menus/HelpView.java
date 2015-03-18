@@ -33,7 +33,7 @@ public class HelpView extends Menu implements Serializable{
     private HelpControl helpControl = new HelpControl();
         
     // display the help menu and get the end users input selection
-    @Override
+
     public void go(){       
               
         String command;

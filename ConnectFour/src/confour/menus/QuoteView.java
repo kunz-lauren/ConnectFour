@@ -29,7 +29,7 @@ public class QuoteView extends Menu implements Serializable{
     
     private QuoteControl quoteMenuControl = new QuoteControl();
     
-    @Override
+
     public void go() {       
               
         String command;

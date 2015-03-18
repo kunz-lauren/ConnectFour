@@ -15,7 +15,6 @@ import confour.RulesControl;
 public class RulesView extends Menu {
     RulesControl control = new RulesControl();
     
-    @Override
     public void go(){
         control.display();
     }

@@ -34,7 +34,7 @@ public class CreditsView extends Menu implements Serializable {
     }
     
     // display the help menu and get the end users input selection
-    @Override 
+
     public void go() {       
               
         String command;

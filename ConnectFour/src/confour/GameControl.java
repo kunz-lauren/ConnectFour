@@ -6,6 +6,9 @@
 package confour;
 
 // @author Daniel
+
+import confour.enums.GameVariables;
+
 public class GameControl {
     private static int row, col;
     private static String piece;
@@ -25,8 +28,8 @@ public class GameControl {
                                 {" "," 1 ","  "," 2 ","  "," 3 ","  "," 4 "," "," 5 ","  "," 6 "," "}};
 
     public void clearBoard(){
-        for(int i = 1; i < 12; i += 2){
-            for(int j = 1; j < 12; j += 2){
+        for(int i = GameVariables.COLUMN_ONE.getNumber(); i < GameVariables.UPPER_EDGE.getNumber(); i += GameVariables.COUNTER.getNumber()){
+            for(int j = GameVariables.COLUMN_ONE.getNumber(); j < GameVariables.UPPER_EDGE.getNumber(); j += GameVariables.COUNTER.getNumber()){
                 board[i][j] = " ";
             }
         }
@@ -35,10 +38,10 @@ public class GameControl {
     public void setBoardPiece(int col, String piece) {
         int row = 0;
         int actualCol = col*2-1;
-        for(int i = 11; i > 0; i-= 2 ){
+        for(int i = GameVariables.COLUMN_SIX.getNumber(); i > GameVariables.LOWER_EDGE.getNumber(); i-= GameVariables.COUNTER.getNumber() ){
             if(board[i][actualCol].equals(" ")){
                 row = i;
-                i = -1;
+                i = GameVariables.LOWER_EDGE.getNumber();
                 this.row = i*2-1;
                 this.col = actualCol;
                 this.piece = piece;

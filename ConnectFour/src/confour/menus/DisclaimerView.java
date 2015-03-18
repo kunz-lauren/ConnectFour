@@ -22,7 +22,7 @@ public class DisclaimerView extends Menu implements Serializable {
     };    
     
     private DisclaimerControl disclaimerMenuControl = new DisclaimerControl();
-    @Override
+
     public void go() {       
               
         String command;

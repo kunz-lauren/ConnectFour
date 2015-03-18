@@ -11,4 +11,6 @@ package confour.interfaces;
  */
 public interface EnterInfo {
     
+    // void getInput();
+    
 }

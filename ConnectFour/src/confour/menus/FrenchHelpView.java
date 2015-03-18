@@ -32,7 +32,6 @@ public class FrenchHelpView extends Menu implements Serializable {
         super(FrenchHelpView.choices);
     }
 
-    @Override
     public void go() {
 
         String selection;

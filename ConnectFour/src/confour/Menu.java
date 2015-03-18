@@ -5,11 +5,14 @@
  */
 package confour;
 
+import confour.interfaces.DisplayInfo;
+import confour.interfaces.EnterInfo;
+
 /**
  *
  * @author laurenkunz
  */
-public abstract class Menu {
+public class Menu implements DisplayInfo, EnterInfo{
     
      public String[][] choices=null;
      
@@ -18,9 +21,7 @@ public abstract class Menu {
      public Menu(String[][] choices){
      
         this.choices=choices;
-     }
-     public abstract void go();
-     
+     }    
      
      public void display() {
         System.out.println("\n\t===============================================================");
