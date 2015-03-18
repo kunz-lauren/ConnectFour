@@ -15,10 +15,13 @@ public enum GameVariables {
     COLUMN_SIX (11),
     COUNTER (2),
     LOWER_EDGE (0),
-    UPPER_EDGE (12);
+    UPPER_EDGE (12),
+    EMPTY_SPACE (" ");
     
     int number;
+    String message;
 
+    // Getters and Setters for each ENUM types
     public int getNumber() {
         return number;
     }
@@ -26,9 +29,23 @@ public enum GameVariables {
     public void setNumber(int number) {
         this.number = number;
     }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
     
+    
+    // Overloaded constructors for each ENUM types
     private GameVariables (int number) {
         this.number = number;
+    }
+
+    private GameVariables (String message) {
+        this.message = message;
     }
     
     

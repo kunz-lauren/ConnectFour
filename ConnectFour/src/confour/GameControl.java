@@ -39,7 +39,7 @@ public class GameControl {
         int row = 0;
         int actualCol = col*2-1;
         for(int i = GameVariables.COLUMN_SIX.getNumber(); i > GameVariables.LOWER_EDGE.getNumber(); i-= GameVariables.COUNTER.getNumber() ){
-            if(board[i][actualCol].equals(" ")){
+            if(board[i][actualCol].equals(GameVariables.EMPTY_SPACE.getMessage())){
                 row = i;
                 i = GameVariables.LOWER_EDGE.getNumber();
                 this.row = i*2-1;
