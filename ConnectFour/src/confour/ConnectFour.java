@@ -5,6 +5,13 @@
  */
 package confour;
 
+import confour.enums.GameVariables;
+import confour.menus.RulesView;
+import confour.menus.QuoteView;
+import confour.menus.HelpView;
+import confour.menus.FrenchHelpView;
+import confour.menus.DisclaimerView;
+import confour.menus.CreditsView;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.Serializable;
@@ -39,14 +46,14 @@ public class ConnectFour implements Serializable {
         while(!menuOption.equals("10")){
             System.out.println("Select an option:");
             System.out.println("1) Single player game"
-                            +"\n2) 2 player game"
+                            +"\n2) Two player game"
                             +"\n3) Rules"
                             +"\n4) Help"
                             +"\n5) Help-French"
                             +"\n6) Game-Mode"
                             +"\n7) Quote of the Day"
                             +"\n8) Credit"
-                            +"\n9) Disclamer"
+                            +"\n9) Disclaimer"
                             +"\n10) Exit");
             System.out.print(">");
             menuOption = input.nextLine();

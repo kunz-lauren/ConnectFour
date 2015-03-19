@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package confour;
+package confour.menus;
 
+import confour.ConnectFour;
+import confour.Menu;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -30,7 +32,6 @@ public class FrenchHelpView extends Menu implements Serializable {
         super(FrenchHelpView.choices);
     }
 
-    @Override
     public void go() {
 
         String selection;
@@ -72,15 +73,6 @@ public class FrenchHelpView extends Menu implements Serializable {
             }
         } while (!selection.equals("Q"));
     }
-
-    /* Display menu function
-     private final void affiche() {
-     this.frenchHelpControl.afficheAideBordureSupérieure();
-     System.out.println(super.choices);
-     System.out.println("\tEntrez la lettre indiquant votre sélection");
-     this.frenchHelpControl.afficheAideBordureInférieure();
-     }
-    */
 
      // Inner class
     class FrenchHelpControl {

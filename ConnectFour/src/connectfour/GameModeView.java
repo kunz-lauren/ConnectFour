@@ -5,6 +5,8 @@
  */
 package connectfour;
 
+import connectfour.ConnectFour;
+import connectfour.GameModeControl;
 import java.util.Scanner;
 
 /**

@@ -5,6 +5,10 @@
  */
 package confour;
 
+import confour.ConnectFour;
+import confour.GameModeControl;
+import confour.Menu;
+
 /**
  *
  * @author Keoni
@@ -25,7 +29,7 @@ public class GameModeView extends Menu{
     private GameModeControl GameModeControl = new GameModeControl();
     
     // display the help menu and get the end users input selection
-    @Override
+
     public void go() {       
               
         String command;

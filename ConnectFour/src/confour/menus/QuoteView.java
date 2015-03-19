@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package confour;
+package confour.menus;
 
+import confour.ConnectFour;
+import confour.Menu;
+import confour.QuoteControl;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -26,7 +29,7 @@ public class QuoteView extends Menu implements Serializable{
     
     private QuoteControl quoteMenuControl = new QuoteControl();
     
-    @Override
+
     public void go() {       
               
         String command;

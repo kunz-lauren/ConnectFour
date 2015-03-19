@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package confour;
+package confour.menus;
 
+import confour.ConnectFour;
+import confour.HelpControl;
+import confour.Menu;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -30,7 +33,7 @@ public class HelpView extends Menu implements Serializable{
     private HelpControl helpControl = new HelpControl();
         
     // display the help menu and get the end users input selection
-    @Override
+
     public void go(){       
               
         String command;

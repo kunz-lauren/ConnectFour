@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package confour;
+package confour.menus;
+
+import confour.Menu;
+import confour.RulesControl;
 
 /**
  *
@@ -12,7 +15,6 @@ package confour;
 public class RulesView extends Menu {
     RulesControl control = new RulesControl();
     
-    @Override
     public void go(){
         control.display();
     }
