@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author 
  */
-public class CreditsView extends Menu implements Serializable {
+public class CreditsView extends Menu implements Serializable, ErrorMessage {
     
     
     private final static String[][] choices = {
@@ -162,12 +162,13 @@ public class CreditsView extends Menu implements Serializable {
         System.out.println(
         "\t********************************************************************");
     }
-
-    private void displayError() {       
+    @Override
+    public Object displayError() {       
         System.out.println();
         displayCreditsBorder();                     
         System.out.println("\tThis is an invalid selection. Please choose again.");
-        displayCreditsBorder();             
+        displayCreditsBorder();         
+        return null;
    
     }
 
