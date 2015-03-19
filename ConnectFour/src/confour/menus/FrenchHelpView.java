@@ -77,7 +77,7 @@ public class FrenchHelpView extends Menu implements Serializable {
     }
 
      // Inner class
-    class FrenchHelpControl implements connectfour.interfaces.HelpMenu {
+    class FrenchHelpControl implements confour.interfaces.HelpMenu {
         
         @Override
         public void afficheAideJeu() { // display game help
