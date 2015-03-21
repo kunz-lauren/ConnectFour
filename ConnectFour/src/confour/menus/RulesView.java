@@ -5,7 +5,6 @@
  */
 package confour.menus;
 
-import confour.Menu;
 import confour.RulesControl;
 
 /**

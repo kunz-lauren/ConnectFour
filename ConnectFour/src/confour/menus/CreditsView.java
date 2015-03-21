@@ -6,7 +6,6 @@
 package confour.menus;
 
 import confour.ConnectFour;
-import confour.Menu;
 import confour.interfaces.ErrorMessage;
 import java.io.Serializable;
 

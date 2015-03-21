@@ -7,7 +7,7 @@ package confour;
 
 import confour.ConnectFour;
 import confour.GameModeControl;
-import confour.Menu;
+import confour.menus.Menu;
 
 /**
  *

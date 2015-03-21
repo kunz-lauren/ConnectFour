@@ -7,7 +7,6 @@ package confour.menus;
 
 import confour.ConnectFour;
 import confour.HelpControl;
-import confour.Menu;
 import java.io.Serializable;
 import java.util.Objects;
 
