@@ -9,6 +9,8 @@ import confour.ConnectFour;
 import java.io.Serializable;
 import java.util.Objects;
 
+import confour.enums.FrenchHelp;
+
 /**
  *
  * @author Davy
@@ -74,82 +76,65 @@ public class FrenchHelpView extends Menu implements Serializable {
     }
 
      // Inner class
-    class FrenchHelpControl {
-
-        private void afficheAideJeu() { // display game help
+    class FrenchHelpControl implements confour.interfaces.HelpMenu {
+        
+        @Override
+        public void afficheAideJeu() { // display game help
             System.out.println();
             afficheAideBordureSupérieure();
-            System.out.println(
-                    "\tL'objectif du jeu est d'être le premier"
-                    + "\n\tjoueur à connecter quatre jetons"
-                    + "\n\tverticalement, horizontalement ou en diagonale."
-            );
+            System.out.println(FrenchHelp.FRENCH_MENU_GAME.getMessage());
             afficheAideBordureInférieure();
         }
 
-        private void afficheAideJoueur() { // display player help
+        @Override
+        public void afficheAideJoueur() { // display player help
             System.out.println();
             afficheAideBordureSupérieure();
-            System.out.println(
-                    "\tLes joueurs prennent chaqun leur tour"
-                    + "\n\tpour placer un jeton sur le plateau"
-                    + "\n\tafin de prévenir l'autre de gagner."
-            );
+            System.out.println(FrenchHelp.FRENCH_MENU_PLAYER.getMessage());
             afficheAideBordureInférieure();
         }
 
-        private void afficheAidePlateau() { // display board help
+        @Override
+        public void afficheAidePlateau() { // display board help
             System.out.println();
             afficheAideBordureSupérieure();
-            System.out.println(
-                    "\tLe plateau de jeu consiste d'une grille"
-                    + "\n\td'emplacements de 6 colonnes par 6 rangées.");
+            System.out.println(FrenchHelp.FRENCH_MENU_COLUMN.getMessage());
             afficheAideBordureInférieure();
         }
 
-        private void afficheAideColonne() { // display column help
+        @Override
+        public void afficheAideColonne() { // display column help
             System.out.println();
             afficheAideBordureSupérieure();
-            System.out.println(
-                    "\tIl y a 6 colonnes de disponible."
-                    + "\n\tLorsqu'un joueur sélectionne une colonne,"
-                    + "\n\tle jeton est placé dans l'espace le plus bas"
-                    + "\n\tqui n'est pas déjà occupé par un autre jeton."
-            );
+            System.out.println(FrenchHelp.FRENCH_MENU_MARKER.getMessage());
             afficheAideBordureInférieure();
         }
 
-        private void afficheAideJeton() { // display marker help
+        @Override
+        public void afficheAideJeton() { // display marker help
             System.out.println();
             afficheAideBordureSupérieure();
-            System.out.println(
-                    "\tUn jeton est une piece de jeu qui peux occuper"
-                    + "\n\tun espace dans le plateau."
-                    + "\n\tIl existe deux types de jeton, un pour chaque joueur."
-            );
+            System.out.println(FrenchHelp.FRENCH_MENU_MARKER.getMessage());
             afficheAideBordureInférieure();
         }
 
-        private void afficheAideBordureSupérieure() { // display top border help
-            System.out.println(
-                    "        .-.     .-.     .-.     .-.     .-.     .-."
-                    + "\n      .'   `._.'   `._.'   `._.'   `._.'   `._.'   `.");
+        @Override
+        public void afficheAideBordureSupérieure() { // display top border help
+            System.out.println(FrenchHelp.FRENCH_MENU_TOP_BORDER.getMessage());
 
         }
 
-        private void afficheAideBordureInférieure() { // display bottom border help
-            System.out.println(
-                    "      .     .-.     .-.     .-.     .-.     .-.     ."
-                    + "\n       `._.'   `._.'   `._.'   `._.'   `._.'   `._.'"
-                    + "\n");
+        @Override
+        public void afficheAideBordureInférieure() { // display bottom border help
+            System.out.println(FrenchHelp.FRENCH_MENU_BOTTOM_BORDER.getMessage());
 
         }
 
-        private void afficheErreur() { // display error    
+        @Override
+        public void afficheErreur() { // display error    
             System.out.println();
             afficheAideBordureSupérieure();
-            System.out.println("\tCette sélection n'existe pas."
-                    + "\n\tVeuillez choisir à nouveau.");
+            System.out.println(FrenchHelp.FRENCH_MENU_ERROR.getMessage());
             afficheAideBordureInférieure();
         }
     }
