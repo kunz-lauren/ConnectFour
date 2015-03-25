@@ -6,6 +6,7 @@
 package confour;
 
 import confour.enums.GameVariables;
+import confour.exceptions.MenuException;
 import confour.menus.RulesView;
 import confour.menus.QuoteView;
 import confour.menus.HelpView;
@@ -36,12 +37,21 @@ public class ConnectFour implements Serializable {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MenuException{
+        try{
         ConnectFour game = new ConnectFour();
         game.mainMenu();
+        }
+        catch(Exception e){
+            throw new MenuException("Game crashed: "+e);
+        }
+        finally{
+            System.out.println("Thank you for playing!");
+        }
     }
     
-    private void mainMenu(){
+    private void mainMenu() throws MenuException{
+        try{
         String menuOption = "";
         while(!menuOption.equals("10")){
             System.out.println("Select an option:");
@@ -57,35 +67,39 @@ public class ConnectFour implements Serializable {
                             +"\n10) Exit");
             System.out.print(">");
             menuOption = input.nextLine();
-            switch (menuOption){
-                case "1":
+            switch (Integer.parseInt(menuOption)){
+                case 1:
                     game.play(1);
                     break;
-                case "2":
+                case 2:
                     game.play(2);
                     break;
-                case "3":
+                case 3:
                     rules.go();
                     break;
-                case "4":
+                case 4:
                     help.go();
                     break;
-                case "5":
+                case 5:
                     aider.go();
                     break;
-                case "6":
+                case 6:
                     gameMode.go();
                     break;
-                case "7":
+                case 7:
                     quote.go();
                     break;
-                case "8":
+                case 8:
                     credits.go();
                     break;
-                case "9":
+                case 9:
                     disclamer.go();
                     break;
             }
+        }
+        }
+        catch(NumberFormatException e){
+            throw new MenuException("Please input a number between 1 and 10.");
         }
     }
     public ConnectFour(){

@@ -6,19 +6,21 @@
 package confour;
 
 import static confour.ConnectFour.input;
+import confour.exceptions.MenuException;
+import java.io.Serializable;
 
 /**
  *
  * @author Daniel
  */
-public class GameView {
-    GameControl game = new GameControl();
-    boolean gameWon;
-    boolean turn;
-    String piece;
-    int col;
-    Player player1;
-    Player player2;
+public class GameView implements Serializable{
+    private GameControl game = new GameControl();
+    private boolean gameWon;
+    private boolean turn;
+    private String piece;
+    private int col;
+    private Player player1;
+    private Player player2;
     
     public void play(int players){
         game.clearBoard();
@@ -52,7 +54,7 @@ public class GameView {
                     Thread.sleep(2000);
                 }
                 catch(Exception e){
-                    //do nothing
+                    new MenuException("Computer could not sleep. Message says: " + e);
                 }
                 piece = "b";
                 col = comp.easyMode();
