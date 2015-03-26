@@ -42,7 +42,8 @@ public class ConnectFour implements Serializable {
             ConnectFour game = new ConnectFour();
             game.mainMenu();
         } catch (Exception e) {
-            throw new MenuException("Game crashed: " + e);
+            e.printStackTrace();
+            throw new MenuException("Game crashed: " + e.getMessage());
         } finally {
             System.out.println("Thank you for playing!");
         }
