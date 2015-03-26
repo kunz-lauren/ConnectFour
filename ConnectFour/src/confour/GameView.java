@@ -8,6 +8,8 @@ package confour;
 import static confour.ConnectFour.input;
 import confour.exceptions.MenuException;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -56,6 +58,7 @@ public class GameView implements Serializable{
                 catch(Exception e){
                     new MenuException("Computer could not sleep. Message says: " + e);
                 }
+                
                 piece = "b";
                 col = comp.easyMode();
             }
