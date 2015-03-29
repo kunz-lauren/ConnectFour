@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package connectfour;
+import connectfour.ManyExceptions;
 import static connectfour.ConnectFour.input;
 import java.util.Scanner;
 
