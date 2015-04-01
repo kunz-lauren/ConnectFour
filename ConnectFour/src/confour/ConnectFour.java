@@ -5,15 +5,14 @@
  */
 package confour;
 
-import confour.enums.GameVariables;
 import confour.exceptions.MenuException;
+import confour.frames.MainFrames;
 import confour.menus.RulesView;
 import confour.menus.QuoteView;
 import confour.menus.HelpView;
 import confour.menus.FrenchHelpView;
 import confour.menus.DisclaimerView;
 import confour.menus.CreditsView;
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.Serializable;
 import java.util.Objects;
@@ -34,18 +33,33 @@ public class ConnectFour implements Serializable {
     private CreditsView credits = new CreditsView();
     private DisclaimerView disclamer = new DisclaimerView();
     
+    static MainFrames mainFrame;
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws MenuException{
+        ConnectFour game = null;
         try {
-            ConnectFour game = new ConnectFour();
-            game.mainMenu();
+            game = new ConnectFour();
+            // game.mainMenu();
+            
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    ConnectFour.mainFrame = new MainFrames();
+                    ConnectFour.mainFrame.setVisible(true);
+                }
+            });
+            
+            
         } catch (Exception e) {
             e.printStackTrace();
             throw new MenuException("Game crashed: " + e.getMessage());
         } finally {
-            System.out.println("Thank you for playing!");
+            if (ConnectFour.mainFrame != null) {
+                ConnectFour.mainFrame.dispose();
+            }
+            // System.out.println("Thank you for playing!");
         }
     }
     
