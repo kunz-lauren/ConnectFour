@@ -33,7 +33,7 @@ public class ConnectFour implements Serializable {
     private CreditsView credits = new CreditsView();
     private DisclaimerView disclamer = new DisclaimerView();
     
-    static MainFrames mainFrame;
+    public static MainFrames mainFrame;
     
     /**
      * @param args the command line arguments
