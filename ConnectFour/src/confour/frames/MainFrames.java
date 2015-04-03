@@ -40,6 +40,7 @@ public class MainFrames extends javax.swing.JFrame {
         jtWelcome = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButtonFrenchHelp = new javax.swing.JButton();
+        quoteDay = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Connect Four");
@@ -139,6 +140,13 @@ public class MainFrames extends javax.swing.JFrame {
             }
         });
 
+        quoteDay.setText("Quote of the Day");
+        quoteDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quoteDayActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
         jpBodyLayout.setHorizontalGroup(
@@ -150,7 +158,8 @@ public class MainFrames extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jButtonFrenchHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonFrenchHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(quoteDay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jpBodyLayout.setVerticalGroup(
@@ -163,6 +172,8 @@ public class MainFrames extends javax.swing.JFrame {
                     .addGroup(jpBodyLayout.createSequentialGroup()
                         .addComponent(jtWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(quoteDay)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtonFrenchHelp)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -218,6 +229,12 @@ public class MainFrames extends javax.swing.JFrame {
         frenchHelp.setVisible(true);
     }//GEN-LAST:event_jButtonFrenchHelpActionPerformed
 
+    private void quoteDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quoteDayActionPerformed
+        this.setVisible(false);
+        QuoteMenuFrame quote = new QuoteMenuFrame();
+        quote.setVisible(true);
+    }//GEN-LAST:event_quoteDayActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,5 +252,6 @@ public class MainFrames extends javax.swing.JFrame {
     private javax.swing.JPanel jpMenuItems;
     private javax.swing.JPanel jpTitle;
     private javax.swing.JScrollPane jtWelcome;
+    private javax.swing.JButton quoteDay;
     // End of variables declaration//GEN-END:variables
 }
