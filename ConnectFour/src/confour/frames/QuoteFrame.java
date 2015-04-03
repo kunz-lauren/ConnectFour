@@ -5,18 +5,18 @@
  */
 package confour.frames;
 
-import connectfour.frames.*;
+import confour.QuoteControl;
 
 /**
  *
- * @author SuperMommy
+ * @author Tenille Diel
  */
-public class QuoteMenuFrame extends javax.swing.JPanel {
-
+public class QuoteFrame extends javax.swing.JFrame {
+QuoteControl quote = new QuoteControl();
     /**
-     * Creates new form MainFrame
+     * Creates new form QuoteFrame
      */
-    public QuoteMenuFrame() {
+    public QuoteFrame() {
         initComponents();
     }
 
@@ -44,6 +44,8 @@ public class QuoteMenuFrame extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtWelcome = new javax.swing.JTextArea();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jpBody.setBackground(new java.awt.Color(13, 88, 117));
         jpBody.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -62,7 +64,7 @@ public class QuoteMenuFrame extends javax.swing.JPanel {
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jpTitleLayout.setVerticalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +223,7 @@ public class QuoteMenuFrame extends javax.swing.JPanel {
                 .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(27, 27, 27))
+                .addContainerGap())
         );
         jpBodyLayout.setVerticalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,16 +231,16 @@ public class QuoteMenuFrame extends javax.swing.JPanel {
                 .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpBodyLayout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpBodyLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -253,40 +255,46 @@ public class QuoteMenuFrame extends javax.swing.JPanel {
                 .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void sundayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sundayButtonActionPerformed
-        // Go to Sunday Quote
+        jtWelcome.setText(quote.displaySundayQuote());
     }//GEN-LAST:event_sundayButtonActionPerformed
 
     private void mondayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mondayButtonActionPerformed
-        // TODO add your handling code here:
+        jtWelcome.setText(quote.displayMondayQuote());
     }//GEN-LAST:event_mondayButtonActionPerformed
 
     private void tuesdayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tuesdayButtonActionPerformed
-        // TODO add your handling code here:
+        jtWelcome.setText(quote.displayTuesdayQuote());
     }//GEN-LAST:event_tuesdayButtonActionPerformed
 
     private void wednesdayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wednesdayButtonActionPerformed
-        // TODO add your handling code here:
+        jtWelcome.setText(quote.displayWednesdayQuote());
     }//GEN-LAST:event_wednesdayButtonActionPerformed
 
     private void thursdayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thursdayButtonActionPerformed
-        // TODO add your handling code here:
+        jtWelcome.setText(quote.displayThursdayQuote());
     }//GEN-LAST:event_thursdayButtonActionPerformed
 
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_exitButtonActionPerformed
+
     private void fridayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fridayButtonActionPerformed
-        // TODO add your handling code here:
+        jtWelcome.setText(quote.displayFridayQuote());
     }//GEN-LAST:event_fridayButtonActionPerformed
 
     private void saturdayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saturdayButtonActionPerformed
-        // TODO add your handling code here:
+        jtWelcome.setText(quote.displaySaturdayQuote());
     }//GEN-LAST:event_saturdayButtonActionPerformed
 
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_exitButtonActionPerformed
-
+    /**
+     * @param args the command line arguments
+     */
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitButton;

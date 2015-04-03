@@ -230,8 +230,8 @@ public class MainFrames extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonFrenchHelpActionPerformed
 
     private void quoteDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quoteDayActionPerformed
-        this.setVisible(false);
-        QuoteMenuFrame quote = new QuoteMenuFrame();
+        //this.setVisible(false);
+        QuoteFrame quote = new QuoteFrame();
         quote.setVisible(true);
     }//GEN-LAST:event_quoteDayActionPerformed
 
