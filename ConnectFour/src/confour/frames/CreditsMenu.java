@@ -80,7 +80,7 @@ public class CreditsMenu extends javax.swing.JFrame {
             }
         });
 
-        tenille.setBackground(new java.awt.Color(0, 153, 153));
+        tenille.setBackground(new java.awt.Color(240, 240, 240));
         tenille.setForeground(new java.awt.Color(0, 153, 153));
         tenille.setText("Tenille");
         tenille.addActionListener(new java.awt.event.ActionListener() {
