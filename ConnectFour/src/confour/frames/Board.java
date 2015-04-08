@@ -21,9 +21,9 @@ public class Board extends javax.swing.JFrame {
     boolean turn;
     String piece;
     Player p1, p2;
-    ImageIcon emptySpace = new ImageIcon("C:/Users/Daniel/Documents/NetBeansProjects/ConFour/src/images/empty-piece.png");
-    ImageIcon blackPiece = new ImageIcon("C:/Users/Daniel/Documents/NetBeansProjects/ConFour/src/images/black-piece.png");
-    ImageIcon redPiece = new ImageIcon("C:/Users/Daniel/Documents/NetBeansProjects/ConFour/src/images/red-piece.png");
+    ImageIcon emptySpace = new ImageIcon("C:/Users/Davy/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/empty-piece.png");
+    ImageIcon blackPiece = new ImageIcon("C:/Users/Davy/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/black-piece.png");
+    ImageIcon redPiece = new ImageIcon("C:/Users/Davy/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/red-piece.png");
     /**
      * Creates new form Board
      */
