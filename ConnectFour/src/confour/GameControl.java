@@ -7,47 +7,66 @@ package confour;
 
 // @author Daniel
 
-import confour.enums.GameVariables;
-
 public class GameControl {
+    private static final int negSix = -6, negOne = -1, zero = 0,
+                            one = 1, two = 2, four = 4, six = 6, 
+                            eleven = 11, twelve = 12, thirteen = 13, 
+                            fourteen = 14, fifteen = 15;
+    private static final String emptyString = " ";
     private static int row, col;
     private static String piece;
-    private static String board[][] = {{"┌-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┐"},
-                                {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
-                                {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
-                                {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
-                                {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
-                                {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
-                                {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
-                                {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
-                                {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
-                                {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
-                                {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
-                                {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
-                                {"└-","-","-┴-","-","-┴-","-","-┴-","-","-┴-","-","-┴-","-","-┘"},
-                                {" "," 1 ","  "," 2 ","  "," 3 ","  "," 4 "," "," 5 ","  "," 6 "," "}};
+    
+    private String actualBoard[][] = {{" ", " ", " ", " ", " ", " ", " "},
+                                      {" ", " ", " ", " ", " ", " ", " "},
+                                      {" ", " ", " ", " ", " ", " ", " "},
+                                      {" ", " ", " ", " ", " ", " ", " "},
+                                      {" ", " ", " ", " ", " ", " ", " "},
+                                      {" ", " ", " ", " ", " ", " ", " "}};
+    
+    private static String board[][] = {{"┌-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┬-","-","-┐"},
+                                       {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
+                                       {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
+                                       {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
+                                       {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
+                                       {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
+                                       {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
+                                       {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
+                                       {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
+                                       {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
+                                       {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
+                                       {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
+                                       {"└-","-","-┴-","-","-┴-","-","-┴-","-","-┴-","-","-┴-","-","-┴-","-","-┘"},
+                                       {" "," 1 ","  "," 2 ","  "," 3 ","  "," 4 "," "," 5 ","  "," 6 ","  ", " 7 ", " "}};
 
     public void clearBoard(){
-        for(int i = GameVariables.COLUMN_ONE.getNumber(); i < GameVariables.UPPER_EDGE.getNumber(); i += GameVariables.COUNTER.getNumber()){
-            for(int j = GameVariables.COLUMN_ONE.getNumber(); j < GameVariables.UPPER_EDGE.getNumber(); j += GameVariables.COUNTER.getNumber()){
-                board[i][j] = " ";
+        for(int i = one; i < twelve; i += two){
+            for(int j = one; j < fourteen; j += two){
+                board[i][j] = emptyString;
+            }
+        }
+    }
+    
+    public void clearActualBoard(){
+        for(int i = 0; i < 6; i++){
+            for(int j = 0; j < 7; j++){
+                actualBoard[i][j] = emptyString;
             }
         }
     }
 
     public void setBoardPiece(int col, String piece) {
-        int row = 0;
-        int actualCol = col*2-1;
-        for(int i = GameVariables.COLUMN_SIX.getNumber(); i > GameVariables.LOWER_EDGE.getNumber(); i-= GameVariables.COUNTER.getNumber() ){
-            if(board[i][actualCol].equals(GameVariables.EMPTY_SPACE.getMessage())){
+        int row = zero;
+        int actualCol = col*two-one;
+        for(int i = eleven; i > zero; i-= two){
+            if(board[i][actualCol].equals(emptyString)){
                 row = i;
-                i = GameVariables.LOWER_EDGE.getNumber();
-                this.row = i*2-1;
+                i = negOne;
+                this.row = i*two-one;
                 this.col = actualCol;
                 this.piece = piece;
             }
         }
-        if(row == 0){
+        if(row == zero){
             System.out.println("Could not add piece to column.");
         }else{
             this.board[row][actualCol] = piece;
@@ -56,13 +75,32 @@ public class GameControl {
             System.out.println("The board is full.");
         }
     }
+    
+    public int setActualBoardPiece(int col, String piece){
+        int row = -1;
+        for(int i = 5; i >=0; i--){
+            if(actualBoard[i][col].equals(emptyString)){
+                row = i;
+                i = -1;
+                this.row = i;
+                this.col = col;
+                this.piece = piece;
+            }
+        }
+        if(row == -1){
+            return -1;
+        } else{
+            this.actualBoard[row][col] = piece;
+            return row;
+        }
+    }
 
     public void displayBoard(){
         
         //System.out.println(board[0][13]);
         
-        for(int i = 0; i < 14; i++){
-            for(int j = 0; j < 13; j++){
+        for(int i = zero; i < fourteen; i++){
+            for(int j = zero; j < fifteen; j++){
                 System.out.print(board[i][j]);
             }
             System.out.println();
@@ -70,9 +108,9 @@ public class GameControl {
     }
     
     public boolean checkWin(){
-        for(int i = 1; i < 12; i += 2){
-            for(int j = 1; j < 12; j += 2){
-                if(!board[i][j].equals(" ")){
+        for(int i = one; i < twelve; i += two){
+            for(int j = one; j < fourteen; j += two){
+                if(!board[i][j].equals(emptyString)){
                     if(checkSpace(i, j)){
                         return true;
                     }
@@ -82,15 +120,90 @@ public class GameControl {
         return false;
     }
     
-    private boolean checkSpace(int row, int col){
-        //int row1, row2, row3, row4;
-        //int col1, col2, col3, col4;
+    public boolean checkGuiWin(){
+        for(int i = 0; i < 5; i++){
+            for(int j = 0; j < 6; j++){
+                if(!actualBoard[i][j].equals(emptyString)){
+                    if(checkGuiSpace(i, j)){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    private boolean checkSpace(int row, int col){        
         
-        
-        int counter = 0;
-        for(int i = -6; i <= 6; i += 2){
-            if(row + i >= 1 && row + i <= 11 && col + i >= 1 && col + i <= 11){
+        int counter = zero;
+        for(int i = negSix; i <= six; i += two){
+            if(row + i >= one && row + i <= eleven && col + i >= one && col + i <= thirteen){
                 if(board[row + i][col + i].equals(piece)){
+                    counter++;
+                }
+                else{
+                    counter = zero;
+                }
+            }
+            if(counter == four){
+                return true;
+            }
+        }
+        counter = 0;
+        
+        for(int i = negSix; i <= six; i += two){
+            if(row + i >= one && row + i <= eleven && col - i >= one && col - i <= thirteen){
+                if(board[row + i][col - i].equals(piece)){
+                    counter++;
+                }
+                else{
+                    counter = zero;
+                }
+            }
+            if(counter == four){
+                return true;
+            }
+        }
+        counter = zero;
+                
+        for(int i = negSix; i <= six; i += two){
+            if(row + i >= one && row + i <= eleven){
+                if(board[row + i][col].equals(piece)){
+                    counter++;
+                }
+                else{
+                    counter = zero;
+                }
+            }
+            if(counter == four){
+                return true;
+            }
+        }
+        counter = zero;
+              
+        for(int i = negSix; i <= six; i += two){
+            if(col + i >= one && col + i <= thirteen){
+                if(board[row][col + i].equals(piece)){
+                    counter++;
+                }
+                else{
+                    counter = zero;
+                }
+            }
+            if(counter == four){
+                return true;
+            }
+        }
+        return false;
+        
+    }
+    
+    private boolean checkGuiSpace(int row, int col){
+        int counter = 0;
+        //top left to bottom right
+        for(int i = -3; i <= 3; i++){
+            if(row + i >= 0 && row + i <= 5 && col + i >= 0 && col + i <= 6){
+                if(actualBoard[row + i][col + i].equals(piece)){
                     counter++;
                 }
                 else{
@@ -103,9 +216,10 @@ public class GameControl {
         }
         counter = 0;
         
-        for(int i = -6; i <= 6; i += 2){
-            if(row + i >= 1 && row + i <= 11 && col - i >= 1 && col - i <= 11){
-                if(board[row + i][col - i].equals(piece)){
+        //bottom left to top right
+        for(int i = -3; i <= 3; i++){
+            if(row + i >= 0 && row + i <= 5 && col - i >= 0 && col - i <= 6){
+                if(actualBoard[row + i][col - i].equals(piece)){
                     counter++;
                 }
                 else{
@@ -118,9 +232,10 @@ public class GameControl {
         }
         counter = 0;
                 
-        for(int i = -6; i <= 6; i += 2){
-            if(row + i >= 1 && row + i <= 11){
-                if(board[row + i][col].equals(piece)){
+        //bottom to top
+        for(int i = -3; i <= 3; i++){
+            if(row + i >= 0 && row + i <= 5){
+                if(actualBoard[row + i][col].equals(piece)){
                     counter++;
                 }
                 else{
@@ -133,9 +248,10 @@ public class GameControl {
         }
         counter = 0;
               
-        for(int i = -6; i <= 6; i += 2){
-            if(col + i >= 1 && col + i <= 11){
-                if(board[row][col + i].equals(piece)){
+        //left to right
+        for(int i = -3; i <= 3; i++){
+            if(col + i >= 0 && col + i <= 6){
+                if(actualBoard[row][col + i].equals(piece)){
                     counter++;
                 }
                 else{
@@ -147,19 +263,27 @@ public class GameControl {
             }
         }
         return false;
-        
     }
     
     //@author Tenille Diel
         private boolean isFull() {      
 
-            for (int cols = 1; cols < 12; cols+=2) {
+            for (int cols = one; cols < twelve; cols += two) {
                  
-                if (board[1][cols] == " ");
+                if (board[one][cols].equals(emptyString));
                 return false;
             }
             return true;
-        }        
+        } 
+    
+    public boolean isTie(){
+        for(int i = 0; i < 6; i++){
+            if(actualBoard[0][i].equals(emptyString)){
+                return false;
+            }
+        }
+        return true;
+    }
 
     // Default constructor
     public GameControl() {

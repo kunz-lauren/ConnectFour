@@ -12,7 +12,7 @@ import confour.QuoteControl;
  * @author Tenille Diel
  */
 public class QuoteFrame extends javax.swing.JFrame {
-QuoteControl quote = new QuoteControl();
+    QuoteControl quote = new QuoteControl();
     /**
      * Creates new form QuoteFrame
      */

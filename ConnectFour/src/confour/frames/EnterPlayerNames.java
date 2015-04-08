@@ -14,8 +14,12 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     /**
      * Creates new form EnterPlayerNames
      */
-    public EnterPlayerNames() {
+    public EnterPlayerNames(int players) {
         initComponents();
+        if(players == 1){
+            jTextField2.setText("Computer");
+            jTextField2.setEditable(false);
+        }
     }
 
     /**
@@ -108,6 +112,11 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         );
 
         jButton1.setText("Continue");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpBoxesLayout = new javax.swing.GroupLayout(jpBoxes);
         jpBoxes.setLayout(jpBoxesLayout);
@@ -173,6 +182,12 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Board board = new Board(jTextField1.getText(), jTextField2.getText());
+        board.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

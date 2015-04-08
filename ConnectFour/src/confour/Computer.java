@@ -14,6 +14,6 @@ import java.util.Random;
 public class Computer {
     public int easyMode(){
         Random num = new Random();
-        return num.nextInt(6)+1;
+        return num.nextInt(7)+1;
     }
 }
