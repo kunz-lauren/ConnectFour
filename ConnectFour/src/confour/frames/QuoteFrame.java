@@ -70,13 +70,12 @@ public class QuoteFrame extends javax.swing.JFrame {
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 42, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jpMenuItems.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        sundayButton.setBackground(new java.awt.Color(13, 88, 117));
         sundayButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         sundayButton.setForeground(new java.awt.Color(13, 88, 117));
         sundayButton.setText("Sunday");
@@ -86,7 +85,6 @@ public class QuoteFrame extends javax.swing.JFrame {
             }
         });
 
-        mondayButton.setBackground(new java.awt.Color(13, 88, 117));
         mondayButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         mondayButton.setForeground(new java.awt.Color(13, 88, 117));
         mondayButton.setText("Monday");
@@ -96,7 +94,6 @@ public class QuoteFrame extends javax.swing.JFrame {
             }
         });
 
-        tuesdayButton.setBackground(new java.awt.Color(13, 88, 117));
         tuesdayButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         tuesdayButton.setForeground(new java.awt.Color(13, 88, 117));
         tuesdayButton.setText("Tuesday");
@@ -106,7 +103,6 @@ public class QuoteFrame extends javax.swing.JFrame {
             }
         });
 
-        wednesdayButton.setBackground(new java.awt.Color(13, 88, 117));
         wednesdayButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         wednesdayButton.setForeground(new java.awt.Color(13, 88, 117));
         wednesdayButton.setText("Wednesday");
@@ -116,7 +112,6 @@ public class QuoteFrame extends javax.swing.JFrame {
             }
         });
 
-        thursdayButton.setBackground(new java.awt.Color(13, 88, 117));
         thursdayButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         thursdayButton.setForeground(new java.awt.Color(13, 88, 117));
         thursdayButton.setText("Thursday");
@@ -126,7 +121,6 @@ public class QuoteFrame extends javax.swing.JFrame {
             }
         });
 
-        exitButton.setBackground(new java.awt.Color(13, 88, 117));
         exitButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitButton.setForeground(new java.awt.Color(13, 88, 117));
         exitButton.setLabel("Exit");
@@ -136,7 +130,6 @@ public class QuoteFrame extends javax.swing.JFrame {
             }
         });
 
-        fridayButton.setBackground(new java.awt.Color(13, 88, 117));
         fridayButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         fridayButton.setForeground(new java.awt.Color(13, 88, 117));
         fridayButton.setText("Friday");
@@ -146,7 +139,6 @@ public class QuoteFrame extends javax.swing.JFrame {
             }
         });
 
-        saturdayButton.setBackground(new java.awt.Color(13, 88, 117));
         saturdayButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         saturdayButton.setForeground(new java.awt.Color(13, 88, 117));
         saturdayButton.setText("Saturday");

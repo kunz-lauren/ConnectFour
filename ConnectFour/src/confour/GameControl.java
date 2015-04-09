@@ -36,7 +36,7 @@ public class GameControl {
                                        {"├-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┼-","-","-┤"},
                                        {"│ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │ "," "," │"},
                                        {"└-","-","-┴-","-","-┴-","-","-┴-","-","-┴-","-","-┴-","-","-┴-","-","-┘"},
-                                       {" "," 1 ","  "," 2 ","  "," 3 ","  "," 4 "," "," 5 ","  "," 6 ","  ", " 7 ", " "}};
+                                       {" "," 1 ","  "," 2 ","  "," 3 ","  "," 4 "," "," 5 ","  "," 6 "," ", " 7 ", " "}};
 
     public void clearBoard(){
         for(int i = one; i < twelve; i += two){
@@ -91,6 +91,7 @@ public class GameControl {
             return -1;
         } else{
             this.actualBoard[row][col] = piece;
+            disBoard();
             return row;
         }
     }
@@ -102,6 +103,15 @@ public class GameControl {
         for(int i = zero; i < fourteen; i++){
             for(int j = zero; j < fifteen; j++){
                 System.out.print(board[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    
+    private void disBoard(){
+        for(int i = 0; i < 5; i++){
+            for(int j = 0; j < 6; j++){
+                System.out.print(actualBoard[i][j]);
             }
             System.out.println();
         }
@@ -121,9 +131,10 @@ public class GameControl {
     }
     
     public boolean checkGuiWin(){
-        for(int i = 0; i < 5; i++){
-            for(int j = 0; j < 6; j++){
+        for(int i = 0; i < 6; i++){
+            for(int j = 0; j < 7; j++){
                 if(!actualBoard[i][j].equals(emptyString)){
+                    System.out.println(""+ i + ", " + j);
                     if(checkGuiSpace(i, j)){
                         return true;
                     }

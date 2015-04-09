@@ -21,9 +21,9 @@ public class Board extends javax.swing.JFrame {
     boolean turn;
     String piece;
     Player p1, p2;
-    ImageIcon emptySpace = new ImageIcon("C:/Users/Davy/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/empty-piece.png");
-    ImageIcon blackPiece = new ImageIcon("C:/Users/Davy/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/black-piece.png");
-    ImageIcon redPiece = new ImageIcon("C:/Users/Davy/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/red-piece.png");
+    ImageIcon emptySpace = new ImageIcon("C:/Users/Daniel/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/empty-piece.png");
+    ImageIcon blackPiece = new ImageIcon("C:/Users/Daniel/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/black-piece.png");
+    ImageIcon redPiece = new ImageIcon("C:/Users/Daniel/Documents/NetBeansProjects/ConnectFour/ConnectFour/src/images/red-piece.png");
     /**
      * Creates new form Board
      */
@@ -93,19 +93,19 @@ public class Board extends javax.swing.JFrame {
         int row = game.setActualBoardPiece(col, piece);
         if(row != -1){
             setGuiPiece(row, col);
-        }
-        if(game.checkGuiWin()){
-            String name;
-            if(piece.equals("r")){
-                name = p1.getName();
+            if(game.checkGuiWin()){
+                String name;
+                if(piece.equals("r")){
+                    name = p1.getName();
+                } else{
+                    name = p2.getName();
+                }
+                turnTextArea.setText("Congratulations "+name + ". You've won.");
+            } else if(game.isTie()){
+                turnTextArea.setText("It's a tie. Thanks for playing.");
             } else{
-                name = p2.getName();
+                switchTurn();
             }
-            turnTextArea.setText("Congratulations "+name + ". You've won.");
-        } else if(game.isTie()){
-            turnTextArea.setText("It's a tie. Thanks for playing.");
-        } else{
-            switchTurn();
         }
     }
     
